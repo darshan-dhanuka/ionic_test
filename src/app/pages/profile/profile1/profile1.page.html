@@ -12,9 +12,9 @@
         </ion-avatar>
         <div padding-start class="userDetail">
           <ion-label class="userName">
-           John Doe
+           Rajat Namdev
           </ion-label>
-          <ion-text>987-123-0000</ion-text>
+          <ion-text>9871230000</ion-text>
         </div>
         <div class="editSection" slot="end" float-right (click)="editProfile()">
           <ion-label ion-button color="light">Edit Profile</ion-label>
@@ -27,12 +27,12 @@
         <ion-segment-button value="profile" class="segmentButton" color="light">
           <ion-label>Profile</ion-label>
         </ion-segment-button>
-        <ion-segment-button value="mycard" color="light">
+        <!--ion-segment-button value="mycard" color="light">
           <ion-label>My Card</ion-label>
         </ion-segment-button>
         <ion-segment-button value="MyAddress" color="light">
           <ion-label>My Address</ion-label>
-        </ion-segment-button>
+        </ion-segment-button-->
       </ion-segment>
     </ion-toolbar>
   </ion-header>
@@ -40,8 +40,8 @@
 <ion-content>
 
     <my-profile *ngIf="selectSegment == 'profile'"></my-profile>
-    <payment-cards *ngIf="selectSegment == 'mycard'"></payment-cards>
-    <my-address *ngIf="selectSegment == 'MyAddress'"></my-address>
+    <!--payment-cards *ngIf="selectSegment == 'mycard'"></payment-cards>
+    <my-address *ngIf="selectSegment == 'MyAddress'"></my-address-->
 
 
 </ion-content>

@@ -19,7 +19,7 @@ export class Profile1Page implements OnInit {
 public userDetails;
 
   constructor() {
-    this.userDetails = { profileUrl: 'assets/profile/user.jpeg', name: 'John Doe', phoneNo: '+91-000-0000-0000', location: 'jaipur' };
+    this.userDetails = { profileUrl: 'assets/profile/user.jpeg', name: 'Rajat Namdev', phoneNo: '+91-000-0000-0000', location: 'Indore' };
     this.selectSegment = 'profile';
    }
 

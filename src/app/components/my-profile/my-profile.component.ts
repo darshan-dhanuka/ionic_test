@@ -22,8 +22,8 @@ export class MyProfileComponent implements OnInit {
   public gender;
 
   constructor() {
-    this.names ='John Doe';
-    this.email ='John@enappd.com';
+    this.names ='Rajat Namdev';
+    this.email ='rajat.namdev@pokersportsleague.com';
     this.phoneNumber='+91 9878745214';
     this.gender ='Male'
    }
