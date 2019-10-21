@@ -13,7 +13,7 @@ import { GuardsService } from './guards/guards.service';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'walkthrough', loadChildren: './pages/walkthrough/slides.module#SlidesPageModule'},
-  { path: 'home', loadChildren: './pages/firebase/firebase-home/home.module#HomePageModule' , canActivate: [GuardsService] },
+  { path: 'home1', loadChildren: './pages/firebase/firebase-home/home.module#HomePageModule' , canActivate: [GuardsService] },
   { path: 'signup', loadChildren: './pages/firebase/signup/signup.module#SignupPageModule' },
   { path: 'login', loadChildren: './pages/firebase/login/login.module#LoginPageModule' },
   { path: 'image-upload', loadChildren: './pages/firebase/image-upload/image-upload.module#ImageUploadPageModule' },
@@ -94,6 +94,12 @@ const routes: Routes = [
   { path: 'applepay', loadChildren: './pages/paymentGateways/applepay/applepay.module#ApplepayPageModule' },
   { path: 'stripe-web', loadChildren: './pages/paymentGateways/stripe-web/stripe-web.module#StripeWebPageModule' },
   { path: 'paypal-web', loadChildren: './pages/paymentGateways/paypal-web/paypal-web.module#PaypalWebPageModule' },
+  
+
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  { path: 'learn', loadChildren: './pages/learn/learn.module#LearnPageModule' },
+
+
 
 
 

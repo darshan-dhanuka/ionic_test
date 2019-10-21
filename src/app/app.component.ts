@@ -59,6 +59,50 @@ export class AppComponent {
   ];
   public beginner = [
     {
+      title: 'Home', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'About Us', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'FAQ', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'News ', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'Blogs ', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'Forum ', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'Rules', url: '/home', icon: 'flame',
+      
+    },
+    {
+      title: 'Responsible Poker', url: '/home', icon: 'flame',
+      
+    },
+    
+    {
+      title: 'Subscribe', url: '/home', icon: 'flame',
+      
+    },
+    
+    {
+      title: 'My account', url: '/home', icon: 'flame',
+      
+    },
+    
+    
+    {
       title: 'Firebase', url: null, icon: 'flame',
       children: [{ title: 'Data Operations', url: '/home', icon: 'nuclear' },
       { title: 'Storage', url: '/image-upload', icon: 'analytics' },
