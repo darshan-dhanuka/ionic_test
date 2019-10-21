@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Product Filter List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list margin-vertical>
+    <ion-item>
+      <ion-row>
+        <ion-col size="4" no-padding class="filters">
+          <ion-row class="imageSection" *ngFor="let list of dataLists;let i = index;" [ngClass]="{'activeIndexBackground':activeIndex == i,'InactiveIndexBackground': activeIndex != i}"
+            (click)="activeRow(i)">
+            <ion-img [src]="list.image"></ion-img>
+            <ion-text class="subtitle">{{list.subTitle}}</ion-text>
+          </ion-row>
+        </ion-col>
+        <ion-col size="8" *ngIf="activeIndex == 3 || activeIndex == 1 || activeIndex == 5 || activeIndex == 7 ||  activeIndex == 9 || activeIndex == 11 ">
+          <ion-list padding-start>
+            <ion-item>
+              <ion-text class="title">Drops</ion-text>
+            </ion-item>
+
+            <ion-item>
+              <ion-text class="title">Baby & Mother</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">OTC Medicine</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Baby & Mother</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Health Atd</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+            <ion-item>
+                <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+        <ion-col size="8" *ngIf=" activeIndex == 0 ||activeIndex == 2 || activeIndex == 4 || activeIndex == 6 || activeIndex == 8 || activeIndex == 10  || activeIndex == 12">
+          <ion-list padding-start>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title"> OTC Medicine</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Health Atd</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Personal Care</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Baby & Mother</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Health Atd</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text class="title">Ayurvedic Product</ion-text>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Ionic App</title>
+
+  <base href="/"/>
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png"/>
+  <script src="assets/phaser/phaser.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/" async></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,600,600i,700,700i&amp;display=swap" rel="stylesheet">
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-0l6BmLldsvVwYB33qCbb8TQqY3N2Ixc&libraries=places"></script> -->
+</head>
+
+<body>
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/ngsw-worker.js')
+               .then(function() { console.log("Service Worker Registered"); });
+    }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Image Cropper</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list-header color="light">From Camera</ion-list-header>
+  <ion-button expand="block" (click)="openCamera()">Take photo</ion-button>
+  <ion-grid *ngIf="cameraImage">
+    <ion-text>Cropped Image:</ion-text>
+  </ion-grid>
+  <img [src]="cameraImage" *ngIf="cameraImage"/>
+  <ion-list-header color="light" margin-top>From Gallery</ion-list-header>
+  <ion-button expand="block"  (click)="openGallery()">Pick from gallery</ion-button>
+  <ion-grid *ngIf="galleryImage">
+      <ion-text>Cropped Image:</ion-text>
+    </ion-grid>
+  <img [src]="galleryImage" *ngIf="galleryImage"/>
+</ion-content>

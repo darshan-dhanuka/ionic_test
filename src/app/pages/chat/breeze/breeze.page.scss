@@ -1,0 +1,505 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+.headerToolbar {
+  --background: #7781ff;
+
+  .headerfab {
+    --background: transparent;
+    --box-shadow: none;
+  }
+}
+ion-fab-button {
+  --background: #718dfc;
+}
+.header-md:after {
+  background-image: none;
+}
+.headerIconColor {
+  color: #595454;
+}
+.header-ios ion-toolbar:last-child {
+  --border-width: 0 !important;
+}
+
+.UserimgSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .userAvatar {
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 15px;
+    margin-left: 10px;
+  }
+  .onlineOffline_icon {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #f1f185;
+    border-radius: 50%;
+    top: 0.2em;
+    right: -4px;
+    border: 1.5px solid white;
+  }
+}
+.usernameSection {
+  display: flex;
+  flex-direction: column;
+
+  .userName {
+    font-size: 18px;
+    color: #fff;
+  }
+  .userStatus {
+    font-size: 14px;
+    color: #f1f185;
+  }
+}
+
+ion-content {
+  --background: #f4f5ff;
+}
+.list-ios {
+  margin-bottom: 5px;
+}
+.h-0{
+  height: 0;
+  overflow: hidden;
+}
+.searchSection{
+  padding: 10px;
+  height: 60px;
+  display: flex;
+  background: #7781ff;
+  -moz-transition: height 0.2s ease;
+  -webkit-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+}
+.gallerySection {
+  height: 88px;
+  display: flex;
+  background: #7781ff;
+  -moz-transition: height 0.2s ease;
+  -webkit-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+  
+
+  .galleryList {
+    display: flex;
+    overflow: scroll;
+    background: #7781ff;
+  }
+  .galleryItem {
+    --background: #7781ff;
+    padding-right: 15px;
+    width: 100px;
+    height: 75px;
+    .galleryItemImg {
+      position: relative;
+      -webkit-animation: mymove 1.2s; 
+      -webkit-animation-fill-mode: forwards;  
+      animation: mymove 1.2s;
+      animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes mymove {
+      0% {
+        top: 0px;
+        z-index: 999;
+      }
+      80% {
+        top: 120px;
+      }
+      100% {
+        top: 140px;
+        display: none !important;
+      }
+    }
+
+    @keyframes mymove {
+      0% {
+        top: 0px;
+        z-index: 999;
+      }
+      80% {
+        top: 120px;
+      }
+      100% {
+        top: 140px;
+        display: none !important;
+      }
+    }
+  }
+
+  .galleryImg {
+    min-width: 70px;
+    min-height: 70px;
+    border-radius: 10px;
+  }
+
+  .item-native {
+    padding-left: 0 !important;
+  }
+}
+
+.shareSection {
+  height: 80px;
+  display: flex;
+  background: #7781ff;
+  -moz-transition: height 0.2s ease;
+  -webkit-transition: height 0.2s ease;
+  -o-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+  
+  .share-user{
+    font-size: 12px;
+    color: white;
+  }
+  .shareList {
+    display: flex;
+    overflow: scroll;
+    background: #7781ff;
+  }
+  .shareItem {
+    --background: #7781ff;
+
+    width: 100px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .shareItemImg {
+      position: relative;
+      -webkit-animation: mymove 1.2s;  
+      -webkit-animation-fill-mode: forwards;  
+      animation: mymove 1.2s;
+      animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes mymove {
+      0% {
+        top: 0px;
+        z-index: 999;
+      }
+      80% {
+        top: 120px;
+      }
+      100% {
+        top: 140px;
+        display: none !important;
+      }
+    }
+
+    @keyframes mymove {
+      0% {
+        top: 0px;
+        z-index: 999;
+      }
+      80% {
+        top: 120px;
+      }
+      100% {
+        top: 140px;
+        display: none !important;
+      }
+    }
+  }
+
+  .shareImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .item-native {
+    padding-left: 0 !important;
+  }
+}
+
+.line-breaker {
+  white-space: pre-line;
+  padding: 5px;
+}
+.input-wrap {
+  display: flex;
+  input {
+    flex: 1;
+    border: 0;
+    border-style: solid;
+    padding: 10px;
+  }
+}
+.message-wrap {
+  .message {
+    position: relative;
+    padding: 0;
+    background: #f4f5ff;
+    .user-img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 45px;
+      width: 45px;
+      height: 45px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+    }
+    .msg-detail {
+      width: 100%;
+      display: inline-block;
+      p {
+        margin: 0;
+      }
+      .msg-info {
+        p {
+          font-size: 0.8em;
+          color: #888;
+        }
+      }
+      .msg-content {
+        position: relative;
+        margin-top: 5px;
+        border-radius: 10px;
+        padding: 8px;
+        width: auto;
+        max-width: 75%;
+        box-shadow: 0px 2px 2px #979798;
+        span.triangle {
+          border-radius: 2px;
+          height: 8px;
+          width: 8px;
+          top: 12px;
+          display: block;
+          border-style: solid;
+          border-color: #ddd;
+          border-width: 1px;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          position: absolute;
+        }
+      }
+    }
+  }
+  .message-left {
+    .msg-info {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .msg-content {
+      float: left;
+    }
+    .msg-detail {
+    }
+    .user-img {
+      left: 0;
+    }
+    .msg-content {
+      color: #72716d;
+      background: #f4f6fe;
+      border: 1px solid #eee;
+      box-shadow: 0px 2px 4px #bbb;
+    }
+  }
+  .message.left:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #d8d6d6;
+    top: 0px;
+    right: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .message-right {
+    .msg-detail {
+      .msg-info {
+        text-align: right;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    .user-img {
+      right: 0;
+    }
+    .msg-content {
+      float: right;
+      color: #fff;
+      background: #718dfc;
+    }
+    .msgimageSection {
+      max-width: 75%;
+      float: right;
+      margin: 15px 0 0;
+    }
+  }
+  .message.right:before {
+    content: "";
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    border-right: 1px solid #d8d6d6;
+    top: 0;
+    left: 1px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.avatarImg {
+  border-radius: 50%;
+  width: 34px;
+  border: 1px solid black;
+  height: 34px;
+  object-fit: cover;
+}
+
+.userProdDetail {
+  border: 5px solid gray !important;
+  padding: 0px;
+}
+
+.rate {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.proImg {
+  height: 65px;
+  object-fit: cover;
+  width: 70px;
+  border-radius: 5%;
+}
+
+.detail {
+  font-size: 16px;
+  color: rgb(59, 89, 152) !important;
+  font-weight: bold;
+}
+
+.msgScroll {
+  width: 100% !important;
+  height: 50px !important;
+  margin-left: 0px !important;
+  background-color: white;
+  margin-top: 0px !important;
+}
+
+.rowScroll {
+  margin-top: 7px !important;
+  padding-left: 4px;
+}
+
+.msgSpace {
+  margin-right: 8px !important;
+}
+
+.iconMsg {
+  background-color: transparent !important;
+  margin-right: -12px !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #f4f5ff;
+  height: 55px;
+}
+
+.sendbtn {
+  margin-top: -12px;
+  font-size: 30px;
+  width: 45px;
+  height: 45px;
+}
+.backbtn {
+  margin-right: 10px !important;
+  font-size: 3.4rem !important;
+  color: black !important;
+}
+.sendBtn {
+  opacity: 1 !important;
+  top: 10px;
+}
+.inputConatiner {
+  width: 80%;
+}
+
+.inputMessage {
+  border: 1px solid #eee;
+  border-radius: 24px;
+  background: white;
+  &.footer-input{
+    height: 50px;
+    box-shadow: 2px 2px 2px #dfe1ec;
+  }
+}
+
+.footer {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  background: #f4f5ff;
+}
+.toolbar-background,
+ion-toolbar {
+  --background: #f4f5ff;
+}
+
+.footer-md:before {
+  background-image: none;
+}
+
+.progressBar {
+  height: 2px !important;
+  .progress-outer {
+    border: none !important;
+  }
+}
+.progress-outer {
+  border: none !important;
+}
+
+.userMessageTime {
+  color: #94938d;
+  font-size: 12px;
+  background: #f4f5ff;
+  padding: 0 0 5px 0;
+}
+.footer-ios {
+  ion-toolbar {
+    --border-width: 0;
+  }
+}
+ion-toolbar {
+  --border-width: 0;
+}
+.sendSection {
+  position: relative;
+  width: 20%;
+  height: 40px;
+}
+
+.messageImageContent {
+  border-radius: 10px;
+}

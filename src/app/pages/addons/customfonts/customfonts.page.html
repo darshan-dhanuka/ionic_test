@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Custom Fonts</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="local1" checked>Local Assets 1</ion-segment-button>
+      <ion-segment-button value="local2" checked>Local Assets 2</ion-segment-button>
+      <ion-segment-button value="google" checked>Google Font</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="segmentTab == 'local1'">
+    <ion-list-header color="medium">Font imported from local Assets</ion-list-header>
+    <ion-grid>
+      <ion-row class="row-header">Normal</ion-row>
+      <ion-row>
+        <ion-col class="muli normal">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Italic</ion-row>
+      <ion-row>
+        <ion-col class="muli italic">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Bold</ion-row>
+      <ion-row>
+        <ion-col class="muli bold ">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Bold-Italic</ion-row>
+      <ion-row>
+        <ion-col class="muli bold italic">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Semi-bold</ion-row>
+      <ion-row>
+        <ion-col class="muli semi-bold">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Semi-bold Italic</ion-row>
+      <ion-row>
+        <ion-col class="muli semi-bold italic">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Light</ion-row>
+      <ion-row>
+        <ion-col class="muli light">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Light Italic</ion-row>
+      <ion-row>
+        <ion-col class="muli light italic">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Extra-light</ion-row>
+      <ion-row>
+        <ion-col class="muli extra-light">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Extra-light Italic</ion-row>
+      <ion-row>
+        <ion-col class="muli extra-light italic">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div *ngIf="segmentTab == 'local2'">
+      <ion-list-header color="medium">Font imported from Local assets</ion-list-header>
+      <ion-grid>
+        <ion-row class="row-header">Normal</ion-row>
+        <ion-row>
+          <ion-col class="qranklestein normal">
+            a quick Brown Fox Jumped Over ...
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  
+    </div>
+  <div *ngIf="segmentTab == 'google'">
+    <ion-list-header color="medium">Font imported from Google Fonts</ion-list-header>
+    <ion-grid>
+      <ion-row class="row-header">Normal</ion-row>
+      <ion-row>
+        <ion-col class="srisakdi normal">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-header">Bold</ion-row>
+      <ion-row>
+        <ion-col class="srisakdi bold">
+          a quick Brown Fox Jumped Over ...
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+</ion-content>

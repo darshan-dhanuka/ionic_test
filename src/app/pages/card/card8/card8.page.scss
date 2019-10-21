@@ -1,0 +1,128 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+.contentSection{
+    background: #fff;
+    margin: 8px;
+  }
+  .productCard{
+    background: #fff;
+  }
+
+  ion-content{
+    --background:#eaeaea;
+  }
+  
+  
+  .leftHeading{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .rightHeading{
+    font-size: 18px;
+  }
+  
+  .topRightSection{
+      border: 1px solid #9e9898;
+      padding: 6px;
+      border-radius: 5px;
+  }
+  
+  .productCard{
+    box-shadow: 0 4px 16px rgba(156, 153, 153, 0.97);
+    --box-shadow: 0 4px 16px rgba(156, 153, 153, 0.97);
+    width: 60%;
+  
+    .productImage{
+      padding: 0 40px;
+      position: relative;
+  
+      .discountSection {
+        background: #15bf15;
+        color: #fff;
+        position: absolute;
+        padding: 6px 16px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: -10px;
+        left: 10px;
+    }
+    }
+  
+    ion-card-header{
+      padding: 0 16px;
+    }
+    .subTitle{
+      font-size: 16px;
+      text-decoration: line-through;
+      padding-left: 16px;
+      color: #000;
+    }
+  
+    
+  }
+  
+  .addBtnIcon{
+    background:var(--ion-color-primary);
+    --background:var(--ion-color-primary);
+  }
+  
+  .addBtnSection{
+    .addBtn{
+      border-radius:5px;
+    --border-radius:5px; 
+    }
+    
+  }
+  
+  .productName{
+    font-size: 22px;
+    color:var(--ion-color-dark);
+    padding-top: 8px;
+  }
+  
+  .productDesc{
+    color:var(--ion-color-dark);
+    padding-bottom: 16px;
+  }
+  
+  
+  .productCardSection{
+    white-space: nowrap;
+    height: auto;
+    overflow-X: scroll;
+    overflow-y: hidden;
+  }
+  .productCard{
+    display: inline-block;
+    white-space: pre-line;
+    padding: 2px auto;
+    width: calc(70% - 20px);
+    height: auto;
+    box-shadow: 0 4px 16px rgba(156, 153, 153, 0.97);
+    --box-shadow: 0 4px 16px rgba(156, 153, 153, 0.97);
+  }
+
+.segmentBtn{
+      min-width: 45px;
+      max-width: 60px;
+  }
+
+  .textUnits{
+      font-size: 24px;
+  }  
+
+  .dFlexAlignItemCenter{
+    display: flex;
+    align-items: center;
+  }
+  
+  

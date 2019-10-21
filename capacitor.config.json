@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "full-firebase-ionic4",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+ 
+}

@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Pay pal
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid text-center>
+      <ion-row>
+        <ion-col>
+          Use this Pay button with the attached logic in your app's payment page.
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card class="welcome-card">
+      <ion-img src="/assets/paypal.jpg"></ion-img>
+      <ion-card-content class="paypalBtn">
+        <ion-button expand="full" color="success" (click)="payWithPaypalMobile()">Pay with Paypal {{currencyIcon}}{{paymentAmount}}</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

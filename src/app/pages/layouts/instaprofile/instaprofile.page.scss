@@ -1,0 +1,77 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+ion-content {
+  --background: #fafafa;
+}
+.profile-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 50px 20px 50px 0;
+  .profile-pic {
+    flex: 2;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 22vw;
+      height: 22vw;
+      max-width: 100px;
+      max-height: 100px;
+      border-radius: 50%;
+      border: 1px solid #dfdfdf;
+    }
+  }
+  .profile-stats {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .stat {
+        text-align: center;
+        .number {
+          font-weight: bold;
+          font-size: 16px;
+        }
+        .text {
+          font-size: 11px;
+          color: #444;
+        }
+      }
+    }
+  }
+}
+ion-segment {
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  ion-segment-button {
+    border: none;
+  }
+}
+.gallery-grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .grid-item{
+        width: 32vw;
+        max-width: 120px;
+        height: 32vw;
+        max-height: 120px;
+        margin-bottom: 3px;
+    }
+}

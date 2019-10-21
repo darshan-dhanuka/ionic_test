@@ -1,0 +1,111 @@
+
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+ion-content{
+    --background: #fafafa;
+}
+
+.video-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .video {
+    height: 200px;
+    width: 100%;
+    background: black;
+    iframe {
+      height: 200px;
+      width: 100%;
+    }
+  }
+  .imagediv {
+    position: relative;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    .inner {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 14px;
+      background: #222;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: white;
+    }
+    .play {
+      position: absolute;
+      font-size: 96px;
+      left: calc(50% - 48px);
+      top: calc(125px - 59px);
+    }
+  }
+  .details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background: linear-gradient(transparent, black 24%);
+    margin-top: -20px;
+    /*z-index: 11;
+    padding: 15px 10px 10px 10px;*/
+    padding: 18px 10px 7px 10px;
+    align-items: center;
+    .avatar {
+      img {
+        border-radius: 50%;
+        min-width: 45px;
+        max-width: 45px;
+        border: 1px solid #ddd;
+      }
+    }
+    .title-block {
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      padding-top: 14px;
+      font-family: sans-serif;
+      .title {
+        font-size: 16px;
+        color: white;
+      }
+      .extra {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        color: gray;
+        align-items: center;
+      }
+      .dot {
+        height: 3px;
+        width: 3px;
+        background: gray;
+        margin: 0px 6px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px) {
+  .video-list {
+    .video {
+      height: 350px;
+      width: 100%;
+      background: black;
+      iframe {
+        height: 350px;
+        width: 100%;
+      }
+    }
+  }
+}

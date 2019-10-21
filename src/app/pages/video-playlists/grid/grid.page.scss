@@ -1,0 +1,115 @@
+
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+:host {
+  ion-content {
+    --background-size: cover;
+    // --background:linear-gradient(to bottom , #429EB6,#ffffff);
+  }
+}
+:host {
+  ion-item {
+    --border-style: none;
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    font-family: Source Code Pro !important;
+  }
+}
+.scroll-content {
+  padding-top: 0 !important;
+}
+.label {
+  margin: 0;
+}
+ion-button {
+  --background: transparent;
+  --box-shadow: none;
+  --background-activated: #f5f6f900;
+  --background-focused: #3171e000;
+  font-family: Source Code Pro !important;
+  font-size: medium;
+  font-weight: bold;
+}
+:host {
+  .imagediv {
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    color: white;
+  }
+}
+.list-md,
+.list-ios {
+  margin: 0;
+  padding: 0px 0;
+  padding-bottom: 53px;
+  //  background: var(--ion-tabbar-text-color);
+  //background: var(--ion-item-background,var(--ion-background-color,#fff));
+}
+.video-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .imagediv {
+    position: relative;
+    background-repeat: no-repeat;
+    height: 40% 100px;
+    background-size: cover;
+    .inner {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 14px;
+      background: #222;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+  }
+  .details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    .avatar {
+      img {
+        border-radius: 50%;
+        padding: 10px;
+        min-width: 65px;
+        max-width: 65px;
+      }
+    }
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      padding-top: 14px;
+      font-family: sans-serif;
+      .extra {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        color: gray;
+        align-items: center;
+      }
+      .dot {
+        height: 3px;
+        width: 3px;
+        background: gray;
+        margin: 0px 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Wordpress Blog Details</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary" text-center>
+      Single WP post details fetched
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="image-wrapper">
+    <ion-img *ngIf="image_url" [src]="image_url"></ion-img>
+  </div>
+  <ion-grid *ngIf="blogDetail && blogDetail.title">
+    <ion-row>
+      <ion-col class="title">
+        {{blogDetail.title.rendered}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="author" *ngIf="blogDetail && blogDetail.authorData">
+    <ion-col text-center>
+      <ion-text>
+        <h1 no-margin>{{blogDetail.authorData.name}}</h1>
+        <p no-margin class="blog-date">{{blogDetail.date | date: 'dd/MM/yyyy'}}</p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <div class="tags">
+    <div class="tags-inner">
+      <ion-chip *ngFor="let item of (blogDetail && blogDetail.tagsData)" color="primary">{{item.name}}</ion-chip>
+    </div>
+  </div>
+
+  <ion-grid *ngIf="blogDetail && blogDetail.content">
+    <ion-row>
+      <ion-col class="content" [innerHtml]="blogDetail.content.rendered">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

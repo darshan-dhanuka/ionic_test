@@ -1,0 +1,21 @@
+<ion-row *ngIf="productData">
+    <ion-col *ngFor="let data of productData" size="6">
+      <ion-card class="card" no-margin (click)="open(data)">
+        <img [src]="data.images[0].src" [alt]="data.name" />
+        <ion-card-content>
+          <ion-card-title>
+            <ion-row>
+              <ion-col no-padding>
+                <ion-text text-left
+                  ><span class="price" [innerHTML]="data.price_html"></span
+                ></ion-text>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col text-left no-padding> </ion-col>
+            </ion-row>
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>

@@ -1,0 +1,32 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+.square-grid{
+  width: 48vw;
+  height: 48vw;
+  background-position: center;
+  background-size: cover;
+  max-width: 250px;
+  max-height: 250px;
+}
+.sc-ion-segment-md-h,.sc-ion-segment-ios-h {
+    --background:  var(--ion-color-primary,#1DA1F2);
+    --background-checked: white;
+    --border-color: rgba(0,0,0,0.1);
+    --color: white;
+    --color-checked:var(--ion-color-primary,#1DA1F2);;
+    //margin-top: 30px;
+  }
+  ion-segment-button{
+    border-radius: 0 !important;
+  }
+  ion-row{
+    display: flex;
+    justify-content: space-evenly;
+  }

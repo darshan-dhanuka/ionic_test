@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"  color="light"></ion-menu-button>
+    </ion-buttons>
+    <div slot="end" class="toolbarDiv">
+      <ion-title color="light">
+        Contacts
+      </ion-title>
+      <ion-searchbar mode="ios" placeholder="Search your friend"></ion-searchbar>
+    </div>
+  </ion-toolbar>
+<ion-segment mode="md" (ionChange)="segmentChanged($event)">
+  <ion-segment-button mode="md" value="chat" checked fixed>
+    <div class="contentCenter">
+       <ion-text slot=end>Friends</ion-text>
+    </div>
+  </ion-segment-button>
+
+  <ion-segment-button mode="md" value="friends">
+    <div class="contentCenter">
+       <ion-text slot=end>Following</ion-text>
+    </div>
+  </ion-segment-button>
+
+  <ion-segment-button mode="md" value="group">
+    <div class="contentCenter">
+       <ion-text slot=end>Follower</ion-text>
+    </div>
+  </ion-segment-button>
+</ion-segment>
+</ion-header>
+
+
+<ion-content>
+  
+   <ion-list *ngIf="segmentTab == 'chat' " no-padding>
+    <div *ngFor="let chat of chatData">
+      <ion-item-sliding >
+        <ion-item>
+          <div class="ProfileAvatr" slot="start">
+            <ion-avatar class="chatImage">
+              <ion-img [src]="chat.image"></ion-img>
+            </ion-avatar>
+          </div>
+          <ion-label>
+            <div class="withcount">
+              <div class="nameAvatar">
+                <h2>{{chat.name}}
+                </h2>
+              </div>
+              <div class="timeEnd">
+                <ion-text slot="end" color="medium">{{chat.time}}</ion-text>
+                <ion-avatar class="chatCount" *ngIf="chat.count">{{chat.count}}</ion-avatar>
+              </div>
+            </div>
+            <p class="widthHalf">{{chat.description}}</p>
+            <div class="typeAnddistance">
+              <ion-icon name="pin" expand="icon-only" color="primary"></ion-icon>
+              <p color="medium" class="typeAnddistancePara">{{chat.distance}}</p>
+              <ion-img [src]=chat.crown class="crown"></ion-img>
+              <p class="typeAnddistancePara">{{chat.type}}</p>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="favorite(item)">
+            <div class="timeEnd">
+               <div class="chatCount">
+                 <ion-icon name="trash" expand="icon-only"></ion-icon>
+              </div>
+            </div>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+
+  </ion-list>
+</ion-content>

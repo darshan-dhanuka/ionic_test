@@ -1,0 +1,48 @@
+<div *ngIf="product == undefined" class="spinner">
+    <ion-spinner name="lines"></ion-spinner>
+  </div>
+  
+  <ion-header class="mybg">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button color="light"></ion-back-button>
+      </ion-buttons>
+      <ion-title color="light">Details</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="cartPage()">
+          <ion-icon name="cart" slot="icon-only" class="white top-btn" no-margin></ion-icon>
+          <ion-badge id="cart-badge">{{ cartItems }}</ion-badge>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content *ngIf="!(product == undefined)">
+    <ion-slides pager="false" [options]="slideOpts"  #slider>
+      <ion-slide>
+        <!--app-innerhome Component-->
+        <app-product (notify)="onReviewClick($event)" [product]="product" [slider]="slider" class="slide"></app-product>
+      </ion-slide>
+      <ion-slide padding class="light-bg" *ngIf="product">
+        <!--app-innerhome Component-->
+        <app-innerhome [recieved_data]="product['related_ids']" class="slide"></app-innerhome>
+      </ion-slide>
+      <ion-slide>
+        <!--app-innerhome Component-->
+        <app-review [product]="product" class="slide"></app-review>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
+  <ion-footer class="footer" align-items-center *ngIf="segment == 'Overview' && !(product == undefined)">
+    <ion-row align-items-center>
+      <ion-col padding>
+        <ion-text>
+          <h6 no-margin class="foot-highlight" [innerHTML]="product.price_html"></h6>
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button (click)="goToCart()" float-right class="white foot-btn" color="orange" no-margin expand="block">
+          <strong>Buy</strong></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>

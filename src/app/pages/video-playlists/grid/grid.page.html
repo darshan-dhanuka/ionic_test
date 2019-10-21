@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios">Youtube Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div class="video-list" *ngFor="let p of gridImages" no-padding mode="md">
+    <div class="imagediv" [ngStyle]="{'background-image' :'url('+ p.image+ ')'}" (click)="viewVideo(p.source)">
+      <div class="inner">
+        <b>{{p.length}}</b>
+      </div>
+    </div>
+    <div class="details">
+      <div class="avatar">
+        <img [src]="p.avatar" />
+      </div>
+      <div class="title-block">
+        <div class="title">{{p.title}}</div>
+        <div class="extra">
+          <div class="author">{{p.author}}</div>
+          <div class="dot"></div>
+          <div class="views">{{p.views}} views</div>
+          <div class="dot"></div>
+          <div class="date">{{p.date}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

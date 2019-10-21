@@ -1,0 +1,14 @@
+<ion-list-header>Image Card Slider</ion-list-header>
+<ion-slides pager="true" [options]="slideOpts" #slideWithNav>
+    <ion-slide *ngFor="let item of gridImages;let i = index">
+      <ion-card>
+          <div class="imagediv" [ngStyle]="{'background-image' :'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+ item.image+ ')','background-repeat': 'no-repeat', 
+          'height':'40% 100px', 'background-size': 'cover '}">
+            <div class="inner">
+              <h1><b>{{item.title}}</b></h1>
+            </div>
+          </div>
+      </ion-card>
+        
+    </ion-slide>
+  </ion-slides>

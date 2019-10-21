@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-capitalize>map direction</ion-title>
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <agm-map [latitude]="origin.lat" [longitude]="origin.lng" [zoom]="12" [disableDefaultUI]="false">
+    <agm-direction [origin]="origin" [destination]="destination">
+    </agm-direction>
+  </agm-map>
+</ion-content>

@@ -1,0 +1,258 @@
+<ion-header translucent>
+  <ion-toolbar color="d4blue">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light" text-center>
+
+    </ion-title>
+    <ion-buttons slot="end" class="user-info">
+      <div class="header-meta">
+        <div class="header-mood">
+          Relaxed
+        </div>
+        <div class="header-name">
+          Scarlett J.
+        </div>
+      </div>
+
+      <div class="header-image">
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #IonContent fullscreen="true">
+  <ion-list>
+    <div *ngFor="let chat of msgList; let i = index; ">
+      <ion-item-sliding #itemSliding *ngIf="chat.userId == User && !chat.image">
+        <ion-item class="chat-item">
+          <ion-row class="chat-row" *ngIf="chat.userId == User">
+            <ion-col class="right" no-padding>
+              <div class="imageAvatarRight animated superfast" [ngClass]="{'slideInLeft':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <p text-wrap padding>{{chat.message}}
+                    </p>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-right': chat.sender,'timer-right': !chat.sender}">
+              <p class="timer-rightP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+      <ion-item-sliding #itemSliding2 *ngIf="chat.userId == toUser && !chat.image && !chat.video && !chat.map ">
+        <ion-item class="chat-item">
+          <ion-row class="chat-row">
+            <ion-col class="left" no-padding size="12">
+              <div class="imageAvatarLeft animated superfast" [ngClass]="{'slideInRight':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <p text-wrap padding>{{chat.message}}</p>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-Left': chat.sender,'timer-left': !chat.sender}">
+              <p class="timer-LeftP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding2)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+
+      </ion-item-sliding>
+      <ion-item-sliding #itemSliding3 *ngIf="chat.userId == toUser && chat.image">
+        <ion-item class="chat-item-user image-item">
+          <ion-row class="chat-row">
+            <ion-col class="left" no-padding>
+              <div class="imageAvatarLeft animated superfast" [ngClass]="{'slideInRight':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <ion-img [src]="chat.image"></ion-img>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-right-condition': chat.sender,'timer-right-conditions': !chat.sender}">
+              <p class="timer-right-conditionP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding3)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding #itemSliding3 *ngIf="chat.userId == toUser && chat.video">
+        <ion-item class="chat-item-user-video image-item">
+          <ion-row class="chat-row">
+            <ion-col class="left" no-padding>
+              <div class="imageAvatarLeft animated superfast" [ngClass]="{'slideInRight':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <video controls class="chatDivVideo">
+                      <source [src]="chat.video" type="video/mp4">
+                    </video>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-right-condition': chat.sender,'timer-right-conditions': !chat.sender}">
+              <p class="timer-right-conditionP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding3)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-item-sliding #itemSliding3 *ngIf="chat.userId == toUser && chat.map">
+        <ion-item class="chat-item-user image-item">
+          <ion-row class="chat-row">
+            <ion-col class="left" no-padding>
+              <div class="imageAvatarLeft animated superfast" [ngClass]="{'slideInRight':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <agm-map [latitude]=chat.map.lat [longitude]=chat.map.lng [draggable]="false" class="chatDivMap">
+                      <agm-marker [latitude]=chat.map.lat [longitude]=chat.map.lng></agm-marker>
+                    </agm-map>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-right-condition': chat.sender,'timer-right-conditions': !chat.sender}">
+              <p class="timer-right-conditionP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding3)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+
+      <ion-item-sliding #itemSliding3 *ngIf="chat.userId == User && chat.image">
+        <ion-item class="chat-item-sender image-item">
+          <ion-row class="chat-row">
+            <ion-col class="left" no-padding>
+              <div class="imageAvatarLeft animated superfast" [ngClass]="{'slideInLeft':(i==(msgList.length-1))}">
+                <ion-label color="light">
+                  <div class="chatDiv">
+                    <ion-img [src]="chat.image"></ion-img>
+                  </div>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-row *ngIf="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1])">
+          <ion-col size="12">
+            <div [ngClass]="{ 'timer-right': chat.sender,'timer-right': !chat.sender}">
+              <p class="timer-rightP">{{i+5}} mins ago</p>
+              <ion-icon *ngIf="chat.sender && chat.sent" name="done-all" [color]="chat.read ? 'd3green': 'light'" class="first-tick"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item-options (ionSwipe)="closeTime(itemSliding3)" side="end">
+          <ion-item-option [ngClass]="((msgList[i+1] && msgList[i+1].userId != chat.userId)|| !msgList[i+1]) ? '':'time-center'">
+            <ion-text>{{chat.time}}</ion-text>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-row class="thin-gap" *ngIf="((msgList[i+1] && msgList[i+1].userId == chat.userId))"></ion-row>
+
+
+    </div>
+    <ion-row class="chat-row" padding-bottom *ngIf="loader">
+      <ion-col no-padding class="loading-col">
+        <div class="imageAvatarRight">
+          <ion-label>
+            <div class="chatDivLoader">
+              <ion-spinner name="dots" color="dark"></ion-spinner>
+
+              <div class="corner-parent-right">
+                <div class="corner-child-right">
+
+                </div>
+              </div>
+            </div>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)=" prepareMsg()" (mousedown)="something($event)">
+      <ion-icon name="send" expand="icon-only"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" edge slot="fixed" class="fabCamera">
+    <ion-fab-button class="fabCamera_button">
+      <ion-icon name="link" mode="ios" color="medium"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="prepareMsg(true)">
+        <ion-icon name="camera" expand="icon-only" class="footerIcon" color="light"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="Videocam" color="light" (click)="prepareMsgcVideo(true)"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="pin" color="light" (click)="prepareMsgMap(true)"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+
+<ion-footer translucent>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input class="input-box" type="text" placeholder="Write a message..." [(ngModel)]="user_input" (keypress)="userTyping($event)"></ion-input>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

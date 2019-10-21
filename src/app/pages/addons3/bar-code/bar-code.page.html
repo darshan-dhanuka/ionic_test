@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>QR & Bar code Scan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+  <ion-list-header color="medium">Scan a QR or Bar code</ion-list-header>
+  <div class="scanSection" padding>
+
+      <ion-button  (click)="scanCode()">Scan Code</ion-button>
+      <div *ngIf="scannedData">
+        <p>Scanned Code Text : <b>{{scannedData['text']}}</b></p>
+        <p>Scanned Code Format : <b>{{scannedData['format']}}</b></p>
+      </div>
+  </div>
+  <ion-list-header color="medium">Generate QR Code with your own url</ion-list-header>
+
+  <div class="CustomEncodeSection" padding>
+      <ion-item>
+        <ion-label position="floating">Paste your Url</ion-label>
+        <ion-input [(ngModel)]="encodedData"></ion-input>
+      </ion-item>
+      <ion-button margin-top (click)="encodedText()">Encode Text</ion-button>
+
+  </div>
+  
+</ion-content>

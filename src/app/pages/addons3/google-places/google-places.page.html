@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Place Near You</ion-title>
+    <ion-buttons slot="end">
+      <ion-select [interfaceOptions]="customAlertOptions" interface="alert" class="hide-filter" value="Filter"
+        name="tag" [(ngModel)]="filtertag" (ionChange)="headTagValue(filtertag)" id="filterSelect">
+        <ion-icon name="funnel" class="person-icon"></ion-icon>
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="restaurant">Restaurant</ion-select-option>
+        <ion-select-option value="atm">ATM</ion-select-option>
+        <ion-select-option value="shopping_mall">Shopping</ion-select-option>
+        <ion-select-option value="point_of_interest">Place of interest</ion-select-option>
+        <ion-select-option value="hospital">Medical</ion-select-option>
+        <ion-select-option value="gas_station">Gas Station</ion-select-option>
+      </ion-select>
+      <ion-button (click)="alertFilter()">
+        <ion-icon name="funnel" class="person-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-searchbar placeholder="Search another location" 
+    (ionInput)="searchPlaces($event)" 
+    id="txtHome" 
+    [(ngModel)]="query" mode="ios"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="16" [disableDefaultUI]="false" (mapReady)="mapReady($event)">
+    <agm-marker *ngFor="let m of displayMarkers; let i = index;" [latitude]="m.lat" [longitude]="m.lng">
+      <agm-info-window>
+        <strong class="infoTitle">{{m.name}}</strong><br />
+        <p>{{m.vicinity}}</p>
+        <p class="info-open">{{m.opening_hours && m.opening_hours.open_now ? "Open now": "Closed"}}</p>
+        <div class="info-images">
+          <div class="info-image" *ngFor="let image of m.photos" [ngStyle]="{'background-image': 'url('+image+')'}">
+          </div>
+        </div>
+        <div class="info-buttons">
+          <ion-button (click)="getDirection(m)" fill="clear">Get Direction</ion-button>
+        </div>
+
+      </agm-info-window>
+      <agm-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="5000" [fillColor]="'#f10a0a94'"
+        [circleDraggable]="false" [editable]="false">
+      </agm-circle>
+    </agm-marker>
+  </agm-map>
+
+
+
+</ion-content>

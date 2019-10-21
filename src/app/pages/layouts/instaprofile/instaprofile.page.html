@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" color="light" class="btn-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Instagram Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-top">
+    <div class="profile-pic">
+      <img src="assets/imgs/enappd.png" />
+    </div>
+    <div class="profile-stats">
+      <div class="stats">
+        <div class="stat">
+          <div class="number">
+            15
+          </div>
+          <div class="text">
+            posts
+          </div>
+        </div>
+        <div class="stat">
+          <div class="number">
+            315
+          </div>
+          <div class="text">
+            followers
+          </div>
+        </div>
+        <div class="stat">
+          <div class="number">
+            150
+          </div>
+          <div class="text">
+            following
+          </div>
+        </div>
+      </div>
+      <div class="edit-profile">
+        <ion-button fill="outline" expand="block" size="small" color="dark">Edit Profile</ion-button>
+      </div>
+    </div>
+
+  </div>
+  <ion-segment mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="grid" checked>
+      <ion-icon name="keypad"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="list">
+      <ion-icon name="menu"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="tagged">
+      <ion-icon name="people"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+  <div class="gallery-grid" id="grid" *ngIf="segmentTab == 'grid'">
+    <div class="grid-item" *ngFor="let item of gridGallery">
+      <img [src]="item" />
+    </div>
+  </div>
+  <div *ngIf="segmentTab == 'list'">
+    <app-instagram></app-instagram>
+  </div>
+</ion-content>

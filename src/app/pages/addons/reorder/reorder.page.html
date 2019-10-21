@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>List Reordering</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header color="light">Drag handle in the end</ion-list-header>
+    <ion-reorder-group (ionItemReorder)="reorderItems($event)" disabled="false">
+      <ion-item *ngFor="let item of items">
+        <ion-label>Item {{ item }}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="light">Drag handle in Start - Custom Icon</ion-list-header>
+    <ion-reorder-group (ionItemReorder)="reorderItems2($event)" disabled="false">
+      <ion-item *ngFor="let item of items2">
+        <ion-label>Item {{ item }}</ion-label>
+        <ion-reorder slot="start">
+            <ion-icon name="nuclear"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+  <ion-list>
+    <ion-list-header color="light">Whole item can be dragged</ion-list-header>
+    <ion-reorder-group (ionItemReorder)="reorderItems3($event)" disabled="false">
+      <ion-reorder *ngFor="let item of items3">
+        <ion-item >
+          <ion-label>Item {{ item }}</ion-label>
+        </ion-item>
+      </ion-reorder>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>

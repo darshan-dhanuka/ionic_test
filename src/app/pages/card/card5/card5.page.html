@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon slot="icon-olny" color="light" name="close-circle" class="iconSize"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="justifyCard">
+    <ion-card *ngFor="let item of data" class="box">
+      <img [src]="item.imageUrl" class="cardImage">
+      <ion-item>
+        <ion-label>
+          <h1 class="bold_font">{{item.name}}</h1>
+          <p>{{item.specification}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-row *ngFor="let row of item.row1" class="rowWidth">
+          <ion-col size="4">
+            <ion-label>
+              <p>Date</p>
+              <h5>{{row.date}}</h5>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>
+              <p>Time</p>
+              <h5>{{row.time}}</h5>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>
+              <p>Duration</p>
+              <h5>{{row.duration}}</h5>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item>
+        <ion-row *ngFor="let row of item.row2" class="rowWidth">
+          <ion-col size="4">
+            <ion-label>
+              <p>salon</p>
+              <h5>{{row.salon}}</h5>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>
+              <p>Row</p>
+              <h5>{{row.row}}</h5>
+            </ion-label>
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>
+              <p>Seat(s)</p>
+              <h5>{{row.seat}}</h5>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <div class="corderTop">
+        <ion-item class="borderRadius">
+          <div class="dottedLineCenter"></div>
+          <ion-label slot="start" class="ButtonDiscount">
+            <p class="total_css">Total</p>
+            <h1>$28.58</h1>
+          </ion-label>
+          <ion-button color="danger" size="small" slot="end" class="ButtonDiscount" fill="clear">
+            <span class="ButtonDiscount">Enter a discount code</span>
+          </ion-button>
+        </ion-item>
+
+        <ion-item class="buttonDiv">
+          <ion-button color="danger" size="large" slot="start" class="invoice">
+            <ion-icon name="document" expand="icon-only" class="distance"></ion-icon><span>Invoice</span>
+          </ion-button>
+          <ion-button color="danger" size="large" slot="end" class="card" >
+            <ion-icon name="card" expand="icon-only" class="distance"></ion-icon><span>Card</span>
+          </ion-button>
+        </ion-item>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

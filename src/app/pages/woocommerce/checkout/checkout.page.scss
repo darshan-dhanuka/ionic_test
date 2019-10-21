@@ -1,0 +1,54 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+.input {
+    border: 0.5px solid rgb(210, 210, 210);
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 3px;
+    font-size: 0.9em !important;
+  }
+  .label {
+    font-size: 12px;
+  }
+  .small {
+    font-size: 9px;
+    color: rgb(120, 120, 120);
+  }
+  .icon {
+    font-size: 21px;
+  }
+  .bottom {
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .add-payment-div {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .spinner {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    z-index: 10;
+  }
+
+  

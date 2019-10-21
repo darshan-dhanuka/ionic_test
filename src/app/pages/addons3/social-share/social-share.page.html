@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>social share</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div no-padding>
+    <ion-list class="accordion-list" lines="none">
+      <ion-card *ngFor="let share of socialShare; let i = index">
+        <ion-label lines="none" no-padding>
+          <div (click)="toggleGroup(i)" class="parentSection">
+            <div>
+              <ion-img src="{{share.headerImage}}" class="headerImg"></ion-img>
+            </div>
+            <span class="btn-title">{{ share.heading }}</span>
+            <ion-buttons class="button" expand="full" slot="start" [ngClass]="{active: isGroupShown(i)}">
+              <ion-icon slot="icon-only" class="end" [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropup'">
+              </ion-icon>
+            </ion-buttons>
+          </div>
+          <ion-list *ngIf="share.shareData && isGroupShown(i)" lines="none">
+            <ion-item *ngFor="let item of share.shareData; let j = index">
+              <h3>{{item.title}}</h3>
+              <ion-button slot="end" class="btnSection" (click)="this[item.clickEvent](item)">Share</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-label>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>

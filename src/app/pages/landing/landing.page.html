@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios" text-capitalize>#Poker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-slides pager="true" [options]="slideOpts" #slideWithNav>
+    <ion-slide *ngFor="let item of gridImages;let i = index">
+      <ion-card>
+          <div class="imagediv" [ngStyle]="{'background-image' :'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+ item.image+ ')','background-repeat': 'no-repeat', 
+          'height':'40% 100px', 'background-size': 'cover '}">
+            <div class="inner">
+              <h1><b>{{item.title}}</b></h1>
+            </div>
+          </div>
+      </ion-card>
+        
+    </ion-slide>
+  </ion-slides>
+<!--Lead-->
+
+<ion-tabs>
+  <div class="btbar">
+  <ion-tab-bar  slot="bottom" >
+    <ion-tab-button   >
+      <ion-icon name="flash" routerLink="/learn" routerDirection="root" name="apps"></ion-icon>
+      <ion-label routerLink="/learn" routerDirection="root" name="apps">Learn</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon routerLink="/netflix" routerDirection="root" name="easel" ></ion-icon>
+      <ion-label routerLink="/netflix" routerDirection="root">Watch</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Play</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>PSL</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</div>
+</ion-tabs>
+</ion-content>

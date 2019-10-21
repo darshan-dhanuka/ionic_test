@@ -1,0 +1,181 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+:host {
+  ion-content {
+    // --background:linear-gradient(to bottom , #3171e0,#9b62f8);
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+:host .slides-md {
+  --bullet-background: var(--ion-text-color-step-800, #cccccc);
+  --bullet-background-active: var(--ion-color-primary, #429eb6);
+  --progress-bar-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+  --progress-bar-background-active: var(--ion-color-primary-shade, #3171e0);
+  --scroll-bar-background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+  --scroll-bar-background-active: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+}
+p {
+  font-size: 14px;
+}
+ion-slides{
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+}
+.des {
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  max-height: 43%;
+  min-height: 43%;
+  width: 79vw;
+  background: slategrey;
+  border-bottom-left-radius: 21px;
+  border-bottom-right-radius: 21px;
+}
+.des2 {
+  position: absolute;
+  top: 50%;
+  margin: auto;
+  max-height: 43%;
+  min-height: 43%;
+  width: 79vw;
+  background: yellowgreen;
+  border-bottom-left-radius: 21px;
+  border-bottom-right-radius: 21px;
+
+}
+
+ion-slide.custom-width.swiper-slide-active {
+  .card-container {
+    padding: 0 60px;
+  }
+  // width: 80vw !important;
+}
+ion-slide.custom-width.swiper-slide-next {
+  .card-container {
+    position: relative;
+  }
+  .offer-card {
+    position: absolute;
+    left: -30px;
+    height: calc( 100% - 70px);
+    width: calc( 100% - 120px);
+    top: 40px;
+  }
+}
+ion-slide.custom-width.swiper-slide-prev {
+  .card-container {
+    position: relative;
+  }
+  .offer-card {
+    position: absolute;
+    right: -30px;
+    height: calc( 100% - 70px);
+    width: calc( 100% - 120px);
+    top: 40px;
+  }
+}
+.card-container {
+  height: 50vh;
+  width: 100%;
+}
+.offer-card {
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+.img-container {
+  height: 50%;
+  img {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.text-container {
+  padding: 20px 10px;
+  position: relative;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  height: 53%;
+  box-shadow: 0px 0px 17px 1px grey;
+}
+.offer-card {
+  border-radius: 40px;
+}
+.logo {
+  position: absolute;
+  top: -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: black;
+  left: calc(50% - 20px);
+  font-size: -webkit-xxx-large;
+  color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+}
+.offer-card {
+  box-shadow: 0px 0px 10px 1px grey;
+}
+.subTitle {
+  font-weight: 100;
+  font-size: 0.6em;
+  color: black;
+}
+.offer-text {
+  margin: 0;
+  margin-top: 5px;
+  letter-spacing: 0px;
+  text-shadow: 0px 0.1px 0px;
+  color: black;
+}
+.sc-ion-label-ios-s h2 {
+  margin: 8px 0px 8px;
+}
+.sc-ion-label-md-s h2 {
+  margin: 8px 0px 8px;
+}
+
+@media (max-width: 320px) {
+  .forIosSmall {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.logo {
+  box-shadow: 0px 0px 10px 2px grey;
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+}

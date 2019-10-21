@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios">Youtube Playlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="video-block">
+    <div class="video">
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(currentVideo.source)" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="details">
+      <div class="title">{{currentVideo.title}}</div>
+      <div class="views">{{currentVideo.views}} views</div>
+      <div class="icons">
+        <div class="block like">
+          <div class="icon">
+            <ion-icon name="thumbs-up"></ion-icon>
+          </div>
+          <div class="text">{{currentVideo.likes}}</div>
+        </div>
+        <div class="block dislike">
+          <div class="icon">
+            <ion-icon name="thumbs-down"></ion-icon>
+          </div>
+          <div class="text">{{currentVideo.dislikes}}</div>
+        </div>
+        <div class="block share">
+          <div class="icon">
+            <ion-icon name="share"></ion-icon>
+          </div>
+          <div class="text">Share</div>
+        </div>
+        <div class="block save">
+          <div class="icon">
+            <ion-icon name="save"></ion-icon>
+          </div>
+          <div class="text">Save</div>
+        </div>
+        <div class="block report">
+          <div class="icon">
+            <ion-icon name="flag"></ion-icon>
+          </div>
+          <div class="text">Report</div>
+        </div>
+      </div>
+    </div>
+    <div class="author-info">
+      <div class="avatar">
+        <img [src]="currentVideo.avatar" />
+      </div>
+      <div class="author">
+        <div class="name">{{currentVideo.author}}</div>
+        <div class="subscribers">{{currentVideo.subscribers}} subscribers</div>
+      </div>
+      <div class="subscribe">
+        <ion-button fill="clear" color="danger">SUBSCRIBE</ion-button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="video-list" *ngFor="let p of playlistImages" no-padding mode="md" (click)="changeCurrentVideo(p)">
+    <div class="imagediv" [ngStyle]="{'background-image' :'url('+ p.image+ ')'}">
+      <div class="inner">
+        <b>{{p.length}}</b>
+      </div>
+    </div>
+    <div class="details">
+      <div class="title-block">
+        <div class="title">{{p.title}}</div>
+        <div class="extra">
+          <div class="author">{{p.author}}</div>
+          <div class="views">{{p.views}} views</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

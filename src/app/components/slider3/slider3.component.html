@@ -1,0 +1,23 @@
+<ion-list-header>Half Width Slider</ion-list-header>
+<img src="../../assets/imgs/offerbackground.jpg" class="overlay-bg" alt="">
+  <ion-slides #slides class="image-slider" pager="false" scrollX="true">
+    <ion-slide *ngFor="let p of pages ; let i =index" class="custom-width">
+      <div class="card-container">
+        <div class="offer-card">
+          <div class="img-container">
+            <img src="{{p.image}}">
+          </div>
+          <div class="text-container" [ngStyle]="{'background':p.color}">
+            <div class="logo">
+              <img src="assets/cards/yoga2.png" alt="">
+            </div>
+            <ion-label>
+              <h2>{{p.title}}</h2>
+              <p class="subTitle">Promo Expires 20 sep 2019</p>
+              <p class="offer-text forIosSmall">{{p.TnC}}</p>
+            </ion-label>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>

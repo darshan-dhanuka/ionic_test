@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Stripe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid text-center>
+    <ion-row>
+      <ion-col>
+        Use this Pay button with the attached logic in your app's payment page.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/stripe.png"></ion-img>
+    <ion-card-header class="ion-no-padding">
+      <ion-card-title>
+        <div class="PriceSection">
+          <h3>{{currencyIcon}}{{paymentAmount}}</h3>
+        </div>
+      </ion-card-title>
+      <div class="credit-card">
+
+        <div class="form-body">
+          <ion-input [(ngModel)]="cardNumber" class="card-number" (ionChange)="format(cardNumber)" maxlength="19">
+          </ion-input>
+          <!-- Card Number -->
+          <!-- <ion-input type="tel" class="card-number" (ionChange)="addCardNumberSpacing(cardNumber)"
+            [(ngModel)]="cardNumber" placeholder="Card Number"> </ion-input> -->
+          <!-- Date Field -->
+          <div class="date-field">
+            <div class="month">
+              <ion-select name="Month" [(ngModel)]="month">
+                <ion-select-option value="01">1</ion-select-option>
+                <ion-select-option value="02">2</ion-select-option>
+                <ion-select-option value="03">3</ion-select-option>
+                <ion-select-option value="04">4</ion-select-option>
+                <ion-select-option value="05">5</ion-select-option>
+                <ion-select-option value="06">6</ion-select-option>
+                <ion-select-option value="07">7</ion-select-option>
+                <ion-select-option value="08">8</ion-select-option>
+                <ion-select-option value="09">9</ion-select-option>
+                <ion-select-option value="10">10</ion-select-option>
+                <ion-select-option value="11">11</ion-select-option>
+                <ion-select-option value="12">12</ion-select-option>
+              </ion-select>
+            </div>
+            <div class="year">
+              <ion-select name="Year" [(ngModel)]="year">
+                <ion-select-option value="2016">2016</ion-select-option>
+                <ion-select-option value="2017">2017</ion-select-option>
+                <ion-select-option value="2018">2018</ion-select-option>
+                <ion-select-option value="2019">2019</ion-select-option>
+                <ion-select-option value="2020">2020</ion-select-option>
+                <ion-select-option value="2021">2021</ion-select-option>
+                <ion-select-option value="2022">2022</ion-select-option>
+                <ion-select-option value="2023">2023</ion-select-option>
+                <ion-select-option value="2024">2024</ion-select-option>
+              </ion-select>
+            </div>
+          </div>
+
+          <!-- Card Verification Field -->
+          <div class="card-verification">
+            <div class="cvv-input">
+              <ion-input type="tel" placeholder="CVV" [(ngModel)]="cvcnumber" maxlength="3"></ion-input>
+            </div>
+            <div class="cvv-details">
+              <p>3 or 4 digits usually found <br> on the signature strip</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <ion-row>
+        <ion-col>
+
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content class="stripeBtn">
+      <ion-button expand="full" color="success" (click)="payWithStripe()">Pay with Stripe</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

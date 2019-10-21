@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Translation</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="translation" checked>Translation</ion-segment-button>
+      <ion-segment-button value="details" checked>Details</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="segmentTab == 'translation'">
+    <ion-item>
+      <ion-select [(ngModel)]="language" (ionChange)="changeLanguage()">
+        <ion-select-option value="en" selected="true">English</ion-select-option>
+        <ion-select-option value="es">Spanish</ion-select-option>
+        <ion-select-option value="fr">French</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="content-header">
+          Translated by HTTP Loader - From external JSON
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card padding>
+      <ion-card-header>
+        Simple
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ title }}</h1>
+        <p>{{ description }}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card padding>
+      <ion-card-header>
+        Simple with directive
+      </ion-card-header>
+      <ion-card-content>
+        <h1 translate>TITLE</h1>
+        <p [translate]="'description'"></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card padding>
+      <ion-card-header>
+        With Params
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{ title_2 }}</h1>
+        <p>{{ description }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card padding>
+      <ion-card-header>
+        With params, with directive
+      </ion-card-header>
+      <ion-card-content>
+        <h1 [translate]="'TITLE_2'" [translateParams]="{value: 'John'}">TITLE</h1>
+        <p [translate]="'description'"></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card padding>
+      <ion-card-header>
+        With Params, nested JSON data and directive
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{name}}</h1>
+        <h1 translate [translateParams]="{name_value: 'John'}">data.name</h1>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="segmentTab == 'details'">
+    <ion-list-header color="medium" >External JSON Language Files</ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          These files are kept in 'src/assets/i18n' folder, one JSON files for each language.
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-img src="assets/i18n/i18n.png"></ion-img>
+    <ion-list-header color="medium" margin-top>JSON file structure</ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          Each JSON file will have key-value pairs of translated texts, and should ideally have all keys in every JSON. 
+          If some key is missing from a JSON, you should have a fallback strategy
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-img src="assets/i18n/spanish.png"></ion-img>
+  </div>
+</ion-content>

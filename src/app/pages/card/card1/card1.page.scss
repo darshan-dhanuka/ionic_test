@@ -1,0 +1,139 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+ion-content{
+    --background:#e9e9e9
+}
+
+.card-item{
+    display: inline-block;
+    white-space: nowrap;
+    padding: 2px auto;
+    width: calc(77% - 20px);
+    height: 250px;
+    background-position: center; 
+    background-size: cover ;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5490196078431373);
+}
+
+.card-item:before{
+    content:'';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+}
+    
+.bhk1{
+    width:100%;
+    height: auto;
+}
+.scrl{
+    white-space: nowrap;
+    height: 290px;
+    overflow-X: scroll;
+    overflow-y: hidden;
+}
+.card-ios ,.card-md{
+    display: inline-block;
+    white-space: nowrap;
+    padding: 2px auto;
+    width: calc(77% - 20px);
+    height: 250px;
+    background-position: center; 
+    background-size: cover ;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5490196078431373);
+}
+
+.list-header-title{
+    font-weight: bold;
+    padding-left: 16px;
+    position: relative;
+    border-bottom: 0.55px solid #c8c7cc;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    color: #333;
+    background: transparent;
+    margin-bottom: 0px;
+}
+.scrimg{
+    width: 95%;
+    height: 350px;
+    border-width: 2px;
+    border-radius: 4px;
+    margin-right: 3px; 
+    position: absolute;
+    z-index: -1;
+}
+.bottom-content{
+    bottom: 20px;
+    color: white;
+}
+       
+.overlay{
+    position: absolute;
+    left: 7px;
+    bottom: 10px;
+}
+
+.price{
+    margin: 1px 7px;
+    font-weight: lighter;
+    color: white;
+    text-align: left;
+}
+
+h4,h5,h6{
+    margin: 1px 10px;
+    font-size: 1rem;
+    font-weight: lighter;
+    color: white;
+}
+h2{
+    margin: 1px 7px;
+    // font-size: 1.9rem;
+    font-weight: lighter;
+    color: white;
+    text-align: left;    
+} 
+
+.heading{
+    text-transform: capitalize;
+    font-weight: 500;
+    padding-left: 10px;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    color: black;
+    font-size: 17px;
+}
+.content{
+    background-size: cover;
+    background-position: center;
+    background:#e9e9e9;
+}
+    
+.col {
+ padding: 0px; 
+}
+.filter{
+    position: absolute;
+    background-size: 20px;
+    left: 88%;
+    top: 36%;
+    width: 21px;
+    height: 21px;
+    background-repeat: no-repeat;
+}
+ion-icon {
+ padding-right: 10px;
+}

@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar class="headerToolbar">
+    <div class="UserimgSection" sltot="start">
+      <ion-avatar class="userAvatar" slot="start">
+        <ion-img [src]="userDetails.image"></ion-img>
+        <span class="onlineOffline_icon"></span>
+      </ion-avatar>
+      <div class="usernameSection">
+        <ion-label class="userName">{{userDetails.firstName}} {{userDetails.lastName}}</ion-label>
+        <ion-note class="userStatus">{{loader ? userDetails.firstName +' is typing ..': userDetails.status}}</ion-note>
+      </div>
+    </div>
+    <ion-fab-button slot="end" translucent="false" class="headerfab" (click)="cameraOpen()">
+      <ion-icon name="camera" class="headerIconColor" [ngStyle]="{'color':GalleryListToggle ? '#fff' :'#595454' }"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button slot="end" translucent="false" class="headerfab" (click)="shareOpen()">
+      <ion-icon name="share-alt" class="headerIconColor" [ngStyle]="{'color':ShareToggle ? '#fff' :'#595454' }"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button slot="end" translucent="false" class="headerfab" (click)="searchOpen()">
+      <ion-icon name="search" class="headerIconColor" [ngStyle]="{'color':SearchToggle ? '#fff' :'#595454' }"></ion-icon>
+    </ion-fab-button>
+
+
+  </ion-toolbar>
+  <div [ngClass]="GalleryListToggle ? 'gallerySection' : 'h-0' ">
+    <ion-list class="galleryList" padding-horizontal>
+      <div *ngFor="let img of gallery;let i = index" class="galleryItem" lines="none" no-padding>
+        <img [src]="img" class="galleryImg" (click)="galleryImage(i)">
+      </div>
+    </ion-list>
+  </div>
+  <div [ngClass]="ShareToggle ? 'shareSection' : 'h-0' ">
+      <ion-list class="shareList" padding-horizontal>
+        <div *ngFor="let img of shareList;let i = index" class="shareItem" lines="none" no-padding>
+          <img [src]="img.image" class="shareImg">
+          <div class="share-user">{{img.name}}</div>
+        </div>
+      </ion-list>
+    </div>
+  <div [ngClass]="SearchToggle ? 'searchSection' : 'h-0' ">
+    <ion-input class="placeholdertext inputMessage" type="text" placeholder="Type to search" autofocus="true"
+      padding-start></ion-input>
+  </div>
+  
+</ion-header>
+
+<ion-content #content>
+  <div class="message-wrap" padding>
+    <div *ngFor="let msg of msgList, let i = index" class="message" [ngClass]="{'left': (msg.userId == toUser),'right':(msg.userId == User)}">
+      <div class="message-left" *ngIf="msg.userId == toUser">
+        <div class="msg-detail">
+          <div class="msg-info">
+            <ion-note class="userMessageTime">{{msg.time}}</ion-note>
+          </div>
+          <div class="msg-content">
+            <p class="line-breaker ">{{msg.message}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="message-right" *ngIf="msg.userId == User">
+        <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner>
+        <div class="msg-detail">
+          <div class="msg-info" *ngIf="msg.userId != msgList[i-1].userId">
+            <ion-note class="userMessageTime">{{msg.time}}</ion-note>
+          </div>
+          <div class="msg-content" *ngIf="!msg.image">
+            <p class="line-breaker">{{msg.message}}</p>
+          </div>
+          <div *ngIf="msg.image" style="max-width: 65%;" class="msgimageSection animated superfast zoomIn">
+            <img [src]="msg.image" class="messageImageContent">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer class="footer">
+  <ion-toolbar>
+    <div class="container">
+      <div class="inputConatiner">
+        <ion-input class="placeholdertext inputMessage footer-input" type="text" placeholder="Type a message"
+          [(ngModel)]="inp_text" autofocus="true" padding-start></ion-input>
+      </div>
+      <div class="sendSection">
+        <ion-fab vertical="bottom" horizontal="end" edge="true" (click)="sendMsg()" class="sendBtn" mode="md">
+          <ion-fab-button class="sendbtn" mode="md" (mousedown)="something($event)">
+            <ion-icon name="send"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

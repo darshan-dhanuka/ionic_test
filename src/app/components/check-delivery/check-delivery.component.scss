@@ -1,0 +1,54 @@
+.dFlexJustifyContentSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+  }
+
+.inputBorder{
+    border-bottom:1px solid #a09b9b;
+}
+.pinInputSection{
+    display: flex;
+    align-items: flex-end;
+}
+
+.active{
+    --background:var(--ion-color-primary);
+    background:var(--ion-color-primary);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+.btnOutline{
+    border:1px solid var(--ion-color-primary);
+    --border:1px solid var(--ion-color-primary);
+    border-radius: 5px;
+}
+.homeBtn{
+    max-width: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    
+}
+
+.officeBtn{
+    margin-left: 10px;
+    max-width: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    
+}
+.BtnSection{
+    display: flex;
+}
+.btnColorWhite{
+    color:#fff;
+}
+.btnColorBlack{
+    color:#000;
+}
+.contentSection{
+    background: #fff;
+}

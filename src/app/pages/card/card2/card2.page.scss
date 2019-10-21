@@ -1,0 +1,105 @@
+/**
+* Ionic Full App  (https://store.enappd.com/product/ionic-full-app-ionic-4-full-app)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+ion-content{
+    --background:#eaeaea;
+}
+
+  .title{
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  .cardSection{
+    background:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    margin-top:8px;
+
+    img{
+        width: 75%;
+    }
+
+    ion-card-content{
+        padding: 16px 5px;
+        width: 100%;
+    }
+  }
+  .contentText{
+    font-size: 14px;
+    font-weight: bold;
+    color: #4e4343;
+  }
+.rowSection{
+    width: 100%;
+    padding-top: 5px;
+}
+
+.priceParentSection{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+  .discountSection {
+    background: #15bf15;
+    color: #fff;
+    border-radius: 3px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+    align-items: center;
+}
+
+.regularPriceSection{
+    text-decoration: line-through;
+}
+
+.colSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.salesCount{
+    // padding-left:2px;
+    font-size: 10px;
+}
+
+.PriceSection {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 8px;
+}
+
+.heartIcon{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    
+}
+
+.heart{
+    color: #d4cccc;
+}
+
+.heartRed{
+    color:#ff0000;
+}
+
+.productTypeText{
+    font-size: 14px;
+}

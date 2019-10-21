@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Event Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="eventcard" *ngFor="let event of events" margin-bottom>
+        <ion-img [src]="event.largeimage"></ion-img>
+        <ion-card-content>
+          <ion-row >
+            <ion-col size="2"><h2 class="month">{{event.month}}</h2><h1>{{event.date}}</h1><h3>{{event.day}}</h3></ion-col>
+            <div class="seperator"></div>
+            <ion-col size="7" class="name"><h2><strong>{{event.name}}</strong></h2><h4 class="venue">{{event.venues}}</h4></ion-col>
+            <ion-col size="2"><button ion-button color="greenish" class="btn" >BOOK</button></ion-col>
+          </ion-row>
+          <div class="hor-seperator"></div>
+          <ion-row>
+            <ion-col size="6"><ion-badge color="light">{{event.type}}</ion-badge></ion-col>
+            <ion-col size="6" class="righttext">₹ {{event.price}} Onwards</ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

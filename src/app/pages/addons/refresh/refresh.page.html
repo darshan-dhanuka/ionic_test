@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pull to refresh</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="resetList()">Reset</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="loadedData">
+
+    <ion-item *ngFor="let item of loadedData">
+      <ion-icon slot="start" name="logo-ionic"></ion-icon>
+      <ion-label>
+        <h2>{{item.title}}</h2>
+        <p>{{item.author}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

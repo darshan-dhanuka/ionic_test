@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Product Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row margin-top margin-bottom>
+    <ion-col size="12">
+      <ion-card class="cardSection" margin-top *ngFor="let item of medicalList;let i = index">
+
+
+        <ion-card-content>
+          <ion-row>
+            <div class="heartIcon" >
+              <ion-icon slot="end" *ngIf="!item.checked" name="trash"  mode="ios"class="iconSize heart "></ion-icon>
+            </div>
+            <ion-col size="4">
+              <img [src]="item.image">
+            </ion-col>
+            <ion-col size="8" class="title pr0">
+              <ion-row>
+                <ion-col size="10" class="title">
+                  <span class="contentText">{{item.title}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="10" no-padding>
+                    <span class="productTypeText">{{item.productType}}</span>
+                </ion-col>
+              </ion-row>
+              <ion-row class="rowSection">
+                <ion-col size="6" class="colSection">
+                  <div class="discountSection">
+                    <ion-label text-uppercase>{{item.rate}}</ion-label>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                  <div>
+                    <span class="salesCount">(124 Review)</span>
+                  </div>
+                </ion-col>
+                <ion-col size="6" class="priceParentSection">
+                  <span class="regularPriceSection">₹{{item.regularPrice}}</span>
+                  <span class="PriceSection">₹{{item.salePrice}}</span>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

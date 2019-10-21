@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar color="profile">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="title-ios" text-capitalize>My Account</ion-title>
+    </ion-toolbar>
+    <ion-toolbar color="profile">
+      <div *ngIf="userDetails" class="userSection" padding-horizontal>
+        <ion-avatar slot="start">
+          <img [src]="userDetails.profileUrl">
+        </ion-avatar>
+        <div padding-start class="userDetail">
+          <ion-label class="userName">
+           John Doe
+          </ion-label>
+          <ion-text>987-123-0000</ion-text>
+        </div>
+        <div class="editSection" slot="end" float-right (click)="editProfile()">
+          <ion-label ion-button color="light">Edit Profile</ion-label>
+        </div>
+  
+      </div>
+    </ion-toolbar>
+    <ion-toolbar color="profile">
+      <ion-segment [(ngModel)]="selectSegment">
+        <ion-segment-button value="profile" class="segmentButton" color="light">
+          <ion-label>Profile</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="mycard" color="light">
+          <ion-label>My Card</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="MyAddress" color="light">
+          <ion-label>My Address</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+    <my-profile *ngIf="selectSegment == 'profile'"></my-profile>
+    <payment-cards *ngIf="selectSegment == 'mycard'"></payment-cards>
+    <my-address *ngIf="selectSegment == 'MyAddress'"></my-address>
+
+
+</ion-content>

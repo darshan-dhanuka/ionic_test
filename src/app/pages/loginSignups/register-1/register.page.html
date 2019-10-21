@@ -1,0 +1,35 @@
+<ion-content text-center center>
+  <div class="content">
+    <div class="top">
+      <div class="logo">
+        <img src="../../../../assets/beach.png" />
+      </div>
+      <ion-text class="title" color="light">Canvas</ion-text>
+    </div>
+    <div class="bottom" padding-horizontal>
+      <div class="content-list">
+        <ion-card class="input-card" margin-vertical>
+          <ion-item lines="none">
+            <ion-icon name="person" item-start></ion-icon>
+            <ion-input type="text" placeholder="Full Name" [(ngModel)]="fullname" padding-start></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="call" item-start></ion-icon>
+            <ion-input type="number" placeholder="Mobile Number" [(ngModel)]="mobileno" padding-start></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="mail" item-start></ion-icon>
+            <ion-input type="email" placeholder="Email" [(ngModel)]="email" padding-start></ion-input>
+          </ion-item>
+        </ion-card>
+      </div>
+      <div class="loginBtn" margin-vertical>
+        <ion-button expand="full" no-padding>Register</ion-button>
+        <ion-text class="font-small">Already have an account?<span ion-text class="link">
+            Click here</span>
+        </ion-text>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

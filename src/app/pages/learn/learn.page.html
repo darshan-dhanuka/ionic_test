@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios" text-capitalize>Learn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+<!-- Fill -->
+<ion-button expand="block" class="learn-bt" fill="outline"><ion-icon slot="start" class="learn-icon1" name="star"></ion-icon>Beginner</ion-button>
+<ion-button expand="block" class="learn-bt" fill="outline"><ion-icon slot="start" class="learn-icon2" name="flame"></ion-icon>Intermediate</ion-button>
+<ion-button expand="block" class="learn-bt" fill="outline"><ion-icon slot="start" class="learn-icon3" name="glasses"></ion-icon>Pro</ion-button>
+<ion-button expand="block" class="learn-bt" fill="outline"><ion-icon slot="start" class="learn-icon4" name="easel"></ion-icon>Simulator</ion-button>
+
+<ion-tabs>
+  
+  <ion-tab-bar  slot="bottom" >
+    <ion-tab-button   >
+      <ion-icon name="flash" routerLink="/learn" routerDirection="root" name="book"></ion-icon>
+      <ion-label routerLink="/learn" routerDirection="root" name="apps">Learn</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon routerLink="/netflix" routerDirection="root" name="easel" ></ion-icon>
+      <ion-label routerLink="/netflix" routerDirection="root">Watch</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon name="football"><img src="src/assets/play.png" alt=""></ion-icon>
+      <ion-label>Play</ion-label>
+    </ion-tab-button>
+    <ion-tab-button >
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>PSL</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
+
+
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-header mode="md">
+  <ion-toolbar mode="md">
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button *ngFor="let item of data" [value]=item.title [checked]="item.title === segmentButton"
+        mode="md">
+        <ion-icon name={{item.title}}></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-toolbar mode="md" *ngIf="segmentButton == 'chatbubbles'">
+    <ion-segment (ionChange)="segmentButtonClicked($event)">
+      <ion-segment-button checked value="message" mode="md" class="borderRight">
+        <ion-text>Messages</ion-text>
+      </ion-segment-button>
+      <ion-segment-button value="feed" mode="md">
+        <ion-text>Feed</ion-text>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="segmentButton == 'contact'">
+  <div class="nodataDiv" padding>
+    <ion-avatar>
+      <ion-img src="../../../../assets/tinder/chat2.jpg"></ion-img>
+    </ion-avatar>
+    <h3 class="text-center neutra font-caps red" style="font-weight: bolder;">
+      You can put a Profile page here
+    </h3>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="segmentButton == 'flame'">
+  <div *ngIf="!hasUserData || !cards.length" class="nodataDiv" padding>
+    <ion-avatar>
+      <ion-img src="../../../../assets/tinder/chat3.jpg"></ion-img>
+    </ion-avatar>
+    <h3 class="text-center neutra font-caps red" style="font-weight: bolder;">
+      {{ cards.length ? 'We are looking for people around you' : 'There is no prospectus around you on your match' }}
+    </h3>
+  </div>
+  <div swingStack #swingStack (throwoutleft)="voteUp(true)" (throwoutright)="voteUp(false)"
+    (throwout)="onThrowOut($event)" [stackConfig]="stackConfig" class="stack">
+    <ion-card class="card" id="dummycard" swingCard #swingCards *ngFor="let item of cards; let i = index"
+      [ngStyle]="{'background':'url('+ item.image +')','background-size':'cover'}">
+      <div class="itemdiv">
+        <div class="like" *ngIf="like && i === cards.length -1">
+          <p text-uppercase>Like</p>
+        </div>
+        <div class="disLike" *ngIf="disLike && i === cards.length -1">
+          <p text-uppercase>Nope</p>
+        </div>
+        <div class="superLike" *ngIf="superLike && i === cards.length -1">
+          <p text-uppercase>SuperLike</p>
+        </div>
+        <ion-item (click)="openandHideDetail(item)">
+          <ion-label>
+            <h1 text-start>{{item.name}} , <span>{{item.age}}</span></h1>
+            <div class="sameLineContent">
+              <ion-icon slot="start" name="snow" expand="icon-only" mode="ios"></ion-icon>
+              <p text-start>{{item.occupation}}</p>
+            </div>
+            <div class="sameLineContent">
+              <ion-icon slot="start" name="pin" expand="icon-only" mode="ios"></ion-icon>
+              <p text-start>{{item.distance}}</p>
+            </div>
+            <!-- <p text-start>{{item.symbol}}</p>
+              <p text-start>{{item.distance}}</p> -->
+          </ion-label>
+          <ion-icon name="information-circle" slot="end" expand="icon-only" color="light" class="info"></ion-icon>
+        </ion-item>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ion-content *ngIf="segmentButton == 'chatbubbles'" #IonContent>
+  <div class="nodataDiv" padding>
+    <ion-avatar>
+      <ion-img src="../../../../assets/tinder/chat1.jpg"></ion-img>
+    </ion-avatar>
+    <h3 class="text-center neutra font-caps red" style="font-weight: bolder;">
+      You can put a Chat page here
+    </h3>
+  </div>
+</ion-content>
+<ion-footer *ngIf="cards.length && segmentButton == 'flame' && hasUserData">
+  <ion-toolbar>
+    <div class="footerContent">
+      <div class="icon_background" *ngFor="let icon of footerIcon;let i = index"
+        [ngClass]="{'transforn-icon': i % 2 != 0}">
+        <ion-icon name={{icon.title}} expand="icon-only" color={{icon.color}} (click)="clikedIconIs(icon.title)"
+          class="icon_size" mode={{icon.mode}}></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
