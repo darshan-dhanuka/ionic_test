@@ -50,11 +50,16 @@ ion-slide{
 }
 
 .l-data-row{
-  background-color: #f19a17;
+  
+  background-color: #bababa;
   margin-top: 3px;
 }
 
 .l-main-col{
   overflow-y: scroll;
   height: 190px;
+}
+.toolbar-class{
+  background-color: #f19a17;
+  padding: 10px;
 }
