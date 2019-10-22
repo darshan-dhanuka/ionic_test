@@ -1,0 +1,48 @@
+ion-slide{
+    margin-bottom: 35px;
+  }
+  
+  .imagediv {
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    color: white;
+  }
+  
+  ion-card {
+    width: 100%;
+    margin: 0 10px;
+    padding: 5px 0px;
+  }
+  .btbar{
+    color: #000000;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    width: max-content;
+}
+.row:first-child .summarycell{
+    font-weight: bold;
+    text-align: center;
+}
+.cell{
+    overflow: auto;
+    word-wrap: break-word;
+    width: 27vw;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+    text-align: right;
+}
+
+.cell:first-child{
+    width:41vw;
+    text-align: left;
+}
+.about-text{
+    padding: 5px 5px;
+}
