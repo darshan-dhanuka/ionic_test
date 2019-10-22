@@ -96,8 +96,14 @@ const routes: Routes = [
   { path: 'paypal-web', loadChildren: './pages/paymentGateways/paypal-web/paypal-web.module#PaypalWebPageModule' },
   
 
-  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' , canActivate: [GuardsService]  },
   { path: 'learn', loadChildren: './pages/learn/learn.module#LearnPageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'responsible-poker', loadChildren: './responsible-poker/responsible-poker.module#ResponsiblePokerPageModule' },
+  { path: 'forum', loadChildren: './forum/forum.module#ForumPageModule' },
+  { path: 'faq', loadChildren: './faq/faq.module#FaqPageModule' },
+  { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
+
 
 
 

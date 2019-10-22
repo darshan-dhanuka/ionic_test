@@ -33,17 +33,13 @@ export class AppComponent {
       active: true
     },
     {
-      title: 'My Wallet',
-      icon: 'wallet'
+      title: 'My Account', url: '/profile1', icon: 'person',
     },
     {
-      title: 'History',
+      title: 'Subscription',
       icon: 'time'
     },
-    {
-      title: 'Notif',
-      icon: 'notifications'
-    },
+   
     {
       title: 'Invite',
       icon: 'gift'
@@ -54,7 +50,8 @@ export class AppComponent {
     },
     {
       title: 'Logout',
-      icon: 'log-out'
+      icon: 'log-out',
+      url: '/logout'
     },
   ];
   public beginner = [
@@ -63,45 +60,42 @@ export class AppComponent {
       
     },
     {
-      title: 'About Us', url: '/home', icon: 'flame',
+      title: 'About Us', url: '/about', icon: 'flame',
       
     },
     {
-      title: 'FAQ', url: '/home', icon: 'flame',
+      title: "FAQ's", url: '/faq', icon: 'flame',
       
     },
     {
-      title: 'News ', url: '/home', icon: 'flame',
+      title: 'News ', url: '/news', icon: 'flame',
       
     },
     {
-      title: 'Blogs ', url: '/home', icon: 'flame',
+      title: 'Blogs ', url: '/blogs', icon: 'flame',
       
     },
     {
-      title: 'Forum ', url: '/home', icon: 'flame',
-      
-    },
-    {
-      title: 'Rules', url: '/home', icon: 'flame',
+      title: 'Forum ', url: null, icon: 'flame',
       
     },
     {
       title: 'Responsible Poker', url: '/home', icon: 'flame',
       
     },
-    
     {
-      title: 'Subscribe', url: '/home', icon: 'flame',
+      title: 'Subscribe', url: '/paypal-web', icon: 'flame',
       
     },
     
     {
-      title: 'My account', url: '/home', icon: 'flame',
+      title: 'My Account', url: '/profile1', icon: 'flame',
       
     },
     
+  
     
+    /*
     {
       title: 'Firebase', url: null, icon: 'flame',
       children: [{ title: 'Data Operations', url: '/home', icon: 'nuclear' },
@@ -125,16 +119,18 @@ export class AppComponent {
         { title: 'Layout 3', url: '/login-2', icon: 'star' },
         { title: 'Layout 4', url: '/login-3', icon: 'moon' }]
     },
+    */
     {
       title: 'Sidemenu Layouts', url: null, icon: 'list-box', module: 'sidemenu',
       children: [
-        { title: 'Overlay', url: '/home', icon: 'partly-sunny' },
+        /*{ title: 'Overlay', url: '/home', icon: 'partly-sunny' },
         { title: 'Small Grid', url: '/home', icon: 'more' },
         { title: 'Full screen', url: '/home', icon: 'logo-model-s' },
-        { title: 'Small Grid 2', url: '/home', icon: 'apps' },
-        { title: 'Profile', url: '/home', icon: 'star' },
-        { title: 'Circular ', url: '/home', icon: 'aperture' }]
+        { title: 'Small Grid 2', url: '/home', icon: 'apps' },*/
+        { title: 'Profile', url: '/home', icon: 'star' },]
+        /* { title: 'Circular ', url: '/home', icon: 'aperture' }]*/
     },
+    /*
     {
       title: 'Chat Lists', url: null, icon: 'chatboxes',
       children: [{ title: 'Elegance', url: '/elegance', icon: 'bulb' },
@@ -253,6 +249,7 @@ export class AppComponent {
         { title: 'Paypal PWA', url: '/paypal-web', icon: 'gift' }
       ]
     }
+    */
   ];
 
   constructor(
