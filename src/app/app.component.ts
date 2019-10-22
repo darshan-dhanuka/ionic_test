@@ -56,40 +56,40 @@ export class AppComponent {
   ];
   public beginner = [
     {
-      title: 'Home', url: '/home', icon: 'flame',
+      title: 'Home', url: '/home', icon: 'home',
       
     },
     {
-      title: 'About Us', url: '/about', icon: 'flame',
+      title: 'About Us', url: '/about', icon: 'albums',
+      
+    },
+    { 
+      title: "FAQ's", url: '/faq', icon: 'bulb',
       
     },
     {
-      title: "FAQ's", url: '/faq', icon: 'flame',
+      title: 'News ', url: '/news', icon: 'list-box',
       
     },
     {
-      title: 'News ', url: '/news', icon: 'flame',
+      title: 'Blogs ', url: '/blogs', icon: 'logo-wordpress',
       
     },
     {
-      title: 'Blogs ', url: '/blogs', icon: 'flame',
+      title: 'Forum ', url: null, icon: 'chatboxes',
       
     },
     {
-      title: 'Forum ', url: null, icon: 'flame',
+      title: 'Responsible Poker', url: '/home', icon: 'eye',
       
     },
     {
-      title: 'Responsible Poker', url: '/home', icon: 'flame',
-      
-    },
-    {
-      title: 'Subscribe', url: '/paypal-web', icon: 'flame',
+      title: 'Subscribe', url: '/paypal-web', icon: 'cash',
       
     },
     
     {
-      title: 'My Account', url: '/profile1', icon: 'flame',
+      title: 'My Account', url: '/profile1', icon: 'contact',
       
     },
     
@@ -121,7 +121,7 @@ export class AppComponent {
     },
     */
     {
-      title: 'Sidemenu Layouts', url: null, icon: 'list-box', module: 'sidemenu',
+      title: 'Profile', url: null, icon: 'list-box', module: 'sidemenu',
       children: [
         /*{ title: 'Overlay', url: '/home', icon: 'partly-sunny' },
         { title: 'Small Grid', url: '/home', icon: 'more' },

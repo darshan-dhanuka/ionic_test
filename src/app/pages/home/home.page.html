@@ -201,31 +201,30 @@
         
       </ion-row>
   </ion-grid!-->
-
-
-<ion-tabs style="    position: relative;
-display: initial;">
-  <div class="btbar">
-  <ion-tab-bar  slot="bottom" color="primary">
-    <ion-tab-button   >
-      <ion-icon name="flash" routerLink="/learn" routerDirection="root" name="apps"></ion-icon>
-      <ion-label routerLink="/learn" routerDirection="root" name="apps">Learn</ion-label>
-    </ion-tab-button>
-    <ion-tab-button >
-      <ion-icon routerLink="/netflix" routerDirection="root" name="easel" ></ion-icon>
-      <ion-label routerLink="/netflix" routerDirection="root">Watch</ion-label>
-    </ion-tab-button>
-    <ion-tab-button >
-      <ion-icon name="apps"></ion-icon>
-      <ion-label>Play</ion-label>
-    </ion-tab-button>
-    <ion-tab-button >
-      <ion-icon name="apps"></ion-icon>
-      <ion-label>PSL</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</div>
-</ion-tabs>
+  
+  <ion-tabs style="    position: relative;
+  display: initial;" >
+  
+    <ion-tab-bar  slot="bottom" color="primary">
+      <ion-tab-button   >
+        <ion-icon name="flash" routerLink="/learn" routerDirection="root" name="book"></ion-icon>
+        <ion-label routerLink="/learn" routerDirection="root" name="apps">Learn</ion-label>
+      </ion-tab-button>
+      <ion-tab-button >
+        <ion-icon routerLink="/video-large-card" routerDirection="root" name="easel" ></ion-icon>
+        <ion-label routerLink="/video-large-card" routerDirection="root">Watch</ion-label>
+      </ion-tab-button>
+      <ion-tab-button >
+        <ion-icon name="football"><img src="src/assets/play.png" alt=""></ion-icon>
+        <ion-label>Play</ion-label>
+      </ion-tab-button>
+      <ion-tab-button >
+        <ion-icon name="apps"></ion-icon>
+        <ion-label>PSL</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+  </ion-tabs>
  <!-- Profile -->
  <ion-menu class="sidemenu-1" *ngIf="sidemenu==5" side="end" type="overlay">
   <ion-content class="contentBg">
