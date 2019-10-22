@@ -93,6 +93,10 @@ export class AppComponent {
       
     },
     
+    {
+      title: 'Watch', url: '/video-large-card', icon: 'film',
+      
+    },
   
     
     /*

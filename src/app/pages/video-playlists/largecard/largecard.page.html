@@ -10,7 +10,7 @@
 <ion-content>
   <ion-card class="video-list" *ngFor="let p of gridImages">
     <div class="video" *ngIf="p.video">
-      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(p.video_url)" frameborder="0"
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(p.source)" frameborder="0"
         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="imagediv" *ngIf="!p.video" [ngStyle]="{'background-image' :'url('+ p.image+ ')'}">
@@ -26,7 +26,7 @@
         <img [src]="p.avatar" />
       </div-->
       <div class="title-block">
-        <div class="title">{{p.video_name}}</div>
+        <div class="title">{{p.title}}</div>
         <div class="extra">
           <div class="author">{{p.author}}</div>
           <div class="dot"></div>
