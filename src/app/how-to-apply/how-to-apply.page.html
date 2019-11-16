@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-toolbar class="new-background-color">
+   
+    <div class="toolimg" style="background: url('/assets/imgs/head.png'); background-size: 100%;
+    background-repeat: no-repeat;height: 96px;">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  class="title-ios" text-capitalize>How to Apply</ion-title>
+  </div>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+   
+          <div>
+              <ion-img routerLink="/psl" routerDirection="root" src="assets/apply/qualifier.jpg"></ion-img>
+              <div></div>
+            </div>
+
+     
+    </ion-row>
+    <ion-row>
+   
+        <div>
+            <ion-img routerLink="/psl" routerDirection="root" src="assets/apply/pro.jpg"></ion-img>
+          </div>
+
+   
+  </ion-row>
+  <ion-row>
+   
+      <div>
+          <ion-img routerLink="/psl" routerDirection="root" src="assets/apply/mentor.jpg"></ion-img>
+        </div>
+
+ 
+</ion-row>
+  </ion-grid>
+</ion-content>
+
+<div class="bottom-bt" style=" display: flex;flex-direction: column;height: 8%;">
+  <ion-tabs style="    position: relative;
+  display: initial;">
+
+    <ion-tab-bar class="bottom-bar" slot="bottom">
+      <ion-tab-button>
+        <ion-img routerLink="/psl" routerDirection="root" src="assets/icon/psl.png"></ion-img>
+        <ion-label routerLink="/psl" routerDirection="root" name="apps">Learn</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-img routerLink="/learn" routerDirection="root" src="assets/icon/learn.png"></ion-img>
+        <ion-label routerLink="/learn" routerDirection="root">Watch</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-img routerLink="/home" routerDirection="root" src="assets/icon/home.png"></ion-img>
+        <ion-label routerLink="/home" routerDirection="root">Watch</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+
+        <ion-img routerLink="/video-large-card" routerDirection="root" src="assets/icon/watch.png"></ion-img>
+        <ion-label routerLink="/video-large-card" routerDirection="root">Play</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-img routerLink="/phaser" routerDirection="root" src="assets/icon/play.png"></ion-img>
+        <ion-label routerLink="/phaser" routerDirection="root">PSL</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>
