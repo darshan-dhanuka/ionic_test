@@ -103,16 +103,16 @@ const routes: Routes = [
   { path: 'forum', loadChildren: './forum/forum.module#ForumPageModule' },
   { path: 'faq', loadChildren: './faq/faq.module#FaqPageModule' },
   { path: 'news', loadChildren: './news/news.module#NewsPageModule' },
+  { path: 'psl', loadChildren: './psl/psl.module#PslPageModule' },
+
+  { path: 'league-structre', loadChildren: './pages/league-structre/league-structre.module#LeagueStructrePageModule' },
 
 
 
+  { path: 'player-stats', loadChildren: './player-stats/player-stats.module#PlayerStatsPageModule' },
 
-
-
-
-
-
-
+  { path: 'teams', loadChildren: './teams/teams.module#TeamsPageModule' },
+  { path: 'how-to-apply', loadChildren: './how-to-apply/how-to-apply.module#HowToApplyPageModule' },
 
 
 ];

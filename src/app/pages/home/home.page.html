@@ -1,130 +1,137 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="title-ios" text-capitalize>#Poker</ion-title>
+
+  <ion-toolbar class="new-background-color">
+
+    <div class="toolimg" style="background: url('/assets/imgs/head.png'); background-size: 100%;
+    background-repeat: no-repeat;height: 96px;">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="title-ios" text-capitalize>#Poker</ion-title>
+    </div>
+
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
-  
-<ion-slides pager="true" [options]="slideOpts" #slideWithNav>
+
+  <ion-slides pager="true" [options]="slideOpts" #slideWithNav>
     <ion-slide *ngFor="let item of gridImages;let i = index">
       <ion-card>
-          <div class="imagediv" [ngStyle]="{'background-image' :'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+ item.image+ ')','background-repeat': 'no-repeat', 
+        <div class="imagediv" [ngStyle]="{'background-image' :'linear-gradient(0deg,rgba(88, 87, 88, 0.3),rgba(94, 93, 94, 0.3)),url('+ item.image+ ')','background-repeat': 'no-repeat', 
           'height':'40% 100px', 'background-size': 'cover '}">
-            <div class="inner">
-              <h1><b>{{item.title}}</b></h1>
-            </div>
+          <div class="inner">
+            <h1><b>{{item.title}}</b></h1>
           </div>
+        </div>
       </ion-card>
-        
+
     </ion-slide>
   </ion-slides>
-  
+
   <ion-grid>
-      <ion-row>
-       
-          <ion-col  align-self-center >
-              
-                  <div  class="userSection"  class="toolbar-class">
-                    <div class="editSection" slot="end" >
-                      <ion-label ion-button color="light">Top 10 PSL Leaderboard</ion-label>
-                    </div>
-              
-                  </div>
-                
-            </ion-col>
-            </ion-row>
-      
-      <ion-row>
-       
-        <ion-col  align-self-center class="l-main-col">
-          <div>
-              <ion-grid>
-                  <ion-row class="l-title" >
-                    <ion-col *ngFor="let l of leaderboardName" align-self-center size="{{l.size}}">
-                      <div>
-                          {{l.name}}
-                      </div>
-                    </ion-col>
-                    
-                  </ion-row>
+    <ion-row>
 
+      <ion-col align-self-center>
 
-                  <ion-row *ngFor="let data of leaderboardData" class="l-data-row">
-                      <ion-col align-self-center class="l-data-col" size="2">
-                        <div  class="l-data">
-                            {{data.rank}}
-                        </div>
-                      </ion-col>
-                      <ion-col align-self-center class="l-data-col" size="5">
-                        <div  class="l-data">
-                            {{data.player}}
-                        </div>
-                      </ion-col>
-                      <ion-col align-self-center class="l-data-col" size="5">
-                          <div  class="l-data">
-                              {{data.score}}
-                          </div>
-                        </ion-col>
-                    </ion-row>
-                    
-                </ion-grid>
+        <div class="userSection" class="toolbar-class">
+          <div class="editSection" slot="end">
+            <ion-label ion-button color="light">Top 10 PSL Leaderboard</ion-label>
           </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-       
-          <ion-col  align-self-center >
-             
-                  <div  class="userSection" class="toolbar-class">
-                    <div class="editSection" slot="end" >
-                      <ion-label ion-button color="light">Top 10 Game Leaderboard</ion-label>
-                    </div>
-              
-                  </div>
-                 
-            </ion-col>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col align-self-center class="l-main-col">
+        <div>
+          <ion-grid>
+            <ion-row class="l-title">
+              <ion-col *ngFor="let l of leaderboardName" align-self-center size="{{l.size}}">
+                <div>
+                  {{l.name}}
+                </div>
+              </ion-col>
+
             </ion-row>
-        <ion-row>  
-        <ion-col align-self-center class="l-main-col">
-            <div>
-                <ion-grid>
-                    <ion-row class="l-title" >
-                      <ion-col *ngFor="let l of leaderboardName" align-self-center size="{{l.size}}">
-                        <div>
-                            {{l.name}}
-                        </div>
-                      </ion-col>
-                      
-                    </ion-row>
-  
-  
-                    <ion-row *ngFor="let data of leaderboardData" class="l-data-row">
-                        <ion-col align-self-center class="l-data-col" size="2">
-                          <div  class="l-data">
-                              {{data.rank}}
-                          </div>
-                        </ion-col>
-                        <ion-col align-self-center class="l-data-col" size="5">
-                          <div  class="l-data">
-                              {{data.player}}
-                          </div>
-                        </ion-col>
-                        <ion-col align-self-center class="l-data-col" size="5">
-                            <div  class="l-data">
-                                {{data.score}}
-                            </div>
-                          </ion-col>
-                      </ion-row>
-                      
-                  </ion-grid>
-            </div>
-          </ion-col>
-        
-      </ion-row>
+
+
+            <ion-row *ngFor="let data of leaderboardData" class="l-data-row">
+              <ion-col align-self-center class="l-data-col" size="2">
+                <div class="l-data">
+                  {{data.rank}}
+                </div>
+              </ion-col>
+              <ion-col align-self-center class="l-data-col" size="5">
+                <div class="l-data">
+                  {{data.player}}
+                </div>
+              </ion-col>
+              <ion-col align-self-center class="l-data-col" size="5">
+                <div class="l-data">
+                  {{data.score}}
+                </div>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col align-self-center>
+
+        <div class="userSection" class="toolbar-class">
+          <div class="editSection" slot="end">
+            <ion-label ion-button color="light">Top 10 Game Leaderboard</ion-label>
+          </div>
+
+        </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col align-self-center class="l-main-col">
+        <div>
+          <ion-grid>
+            <ion-row class="l-title">
+              <ion-col *ngFor="let l of leaderboardName" align-self-center size="{{l.size}}">
+                <div>
+                  {{l.name}}
+                </div>
+              </ion-col>
+
+            </ion-row>
+
+
+            <ion-row *ngFor="let data of leaderboardData" class="l-data-row">
+              <ion-col align-self-center class="l-data-col" size="2">
+                <div class="l-data">
+                  {{data.rank}}
+                </div>
+              </ion-col>
+              <ion-col align-self-center class="l-data-col" size="5">
+                <div class="l-data">
+                  {{data.player}}
+                </div>
+              </ion-col>
+              <ion-col align-self-center class="l-data-col" size="5">
+                <div class="l-data">
+                  {{data.score}}
+                </div>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+        </div>
+      </ion-col>
+
+    </ion-row>
   </ion-grid>
   <!--ion-grid>
       <ion-row>
@@ -201,81 +208,72 @@
         
       </ion-row>
   </ion-grid!-->
-  
+
+
+
+  <ion-row>
+
+    <ion-col align-self-center>
+
+      <div class="userSection" class="toolbar-class">
+        <div class="editSection" slot="end">
+          <ion-label ion-button color="light">News</ion-label>
+        </div>
+
+      </div>
+
+    </ion-col>
+  </ion-row>
+
+  <div class="video-list" *ngFor="let item of blogPosts" no-padding mode="md" [routerLink]="['/', 'blogs', item.id]">
+    <div class="imagediv"
+      [ngStyle]="{'background-image' :'url('+ (item && item.imageData && item.imageData.source_url)+ ')'}">
+    </div>
+    <div class="details">
+      <div class="title-block">
+        <div class="title">{{item.title.rendered}}</div>
+        <div class="extra">
+          <div class="views">{{item.date | date: 'dd/MM/yyyy'}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fix-marquee">
+    <div class="marquee-bt">
+      <marquee style="background:red ;    position: fixed;
+z-index: 5555;
+bottom: 50px;
+padding: 8px;
+color: #fff;" direction="left">This text will scroll from left to right</marquee>
+    </div>
+  </div>
+</ion-content>
+<div class="bottom-bt" style=" display: flex;flex-direction: column;height: 8%;">
   <ion-tabs style="    position: relative;
-  display: initial;" >
-  
-    <ion-tab-bar  slot="bottom" color="primary">
-      <ion-tab-button   >
-        <ion-icon name="flash" routerLink="/learn" routerDirection="root" name="book"></ion-icon>
-        <ion-label routerLink="/learn" routerDirection="root" name="apps">Learn</ion-label>
+  display: initial;">
+
+    <ion-tab-bar class="bottom-bar" slot="bottom">
+      <ion-tab-button>
+        <ion-img routerLink="/psl" routerDirection="root" src="assets/icon/psl.png"></ion-img>
+        <ion-label routerLink="/psl" routerDirection="root" name="apps">Learn</ion-label>
       </ion-tab-button>
-      <ion-tab-button >
-        <ion-icon routerLink="/video-large-card" routerDirection="root" name="easel" ></ion-icon>
-        <ion-label routerLink="/video-large-card" routerDirection="root">Watch</ion-label>
+      <ion-tab-button>
+        <ion-img routerLink="/learn" routerDirection="root" src="assets/icon/learn.png"></ion-img>
+        <ion-label routerLink="/learn" routerDirection="root">Watch</ion-label>
       </ion-tab-button>
-      <ion-tab-button >
-        <ion-icon  routerLink="/phaser" routerDirection="root" name="football"><img src="src/assets/play.png" alt=""></ion-icon>
-        <ion-label routerLink="/phaser" routerDirection="root">Play</ion-label>
+      <ion-tab-button>
+        <ion-img routerLink="/home" routerDirection="root" src="assets/icon/home.png"></ion-img>
+        <ion-label routerLink="/home" routerDirection="root">Watch</ion-label>
       </ion-tab-button>
-      <ion-tab-button >
-        <ion-icon  routerLink="/news" routerDirection="root" name="apps"></ion-icon>
-        <ion-label routerLink="/news" routerDirection="root">PSL</ion-label>
+      <ion-tab-button>
+
+        <ion-img routerLink="/video-large-card" routerDirection="root" src="assets/icon/watch.png"></ion-img>
+        <ion-label routerLink="/video-large-card" routerDirection="root">Play</ion-label>
+      </ion-tab-button>
+      <ion-tab-button>
+        <ion-img routerLink="/phaser" routerDirection="root" src="assets/icon/play.png"></ion-img>
+        <ion-label routerLink="/phaser" routerDirection="root">PSL</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
-  
   </ion-tabs>
- <!-- Profile -->
- <ion-menu class="sidemenu-1" *ngIf="sidemenu==5" side="end" type="overlay">
-  <ion-content class="contentBg">
-    <div>
-      <ion-card no-padding no-margin slot="fixed" class="driverCard fixed" color="primary">
-        <ion-item lines="none" padding-vertical>
-          <div class="driverProfileImage">
-            <ion-avatar slot="start" class="profile">
-              <img src="../../../../assets/map/driver.jpeg">
-            </ion-avatar>
-            <div margin-start>
-              <h3 class="userName" no-margin>John Doe</h3>
-              <span class="userDetails">
-                <ion-icon name="star"></ion-icon>Premium Member
-              </span>
-            </div>
-          </div>
-        </ion-item>
-
-        <ion-card-content no-margin no-padding>
-          <div class="cardContent">
-            <div class="driverDetails">
-              <ion-icon name="time" class="driverStatusIcons"></ion-icon>
-              <ion-label class="textColor textBold detailsLabel">10.2</ion-label>
-              <p text-uppercase class="detailText ">Hours Online</p>
-            </div>
-            <div class="driverDetails">
-              <ion-icon name="speedometer" class="driverStatusIcons"></ion-icon>
-              <ion-label text-uppercase class="textColor textBold detailsLabel">30 KM</ion-label>
-              <p text-uppercase class="detailText">Total Distance</p>
-            </div>
-            <div class="driverDetails">
-              <ion-icon name="time" class="driverStatusIcons"></ion-icon>
-              <ion-label class="textColor textBold detailsLabel">20</ion-label>
-              <p text-uppercase class="detailText">Total Jobs</p>
-            </div>
-          </div>
-
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <ion-list lines="none" padding-top>
-      <ion-menu-toggle auto-hide="false" *ngFor="let item of sidemenuLayout1">
-        <ion-item>
-          <ion-icon slot="start" [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
-          <ion-label [ngClass]="{'active':item.active}">
-            {{item.title}}
-          </ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-</ion-content>
+</div>
