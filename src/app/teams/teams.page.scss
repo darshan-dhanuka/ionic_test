@@ -1,0 +1,239 @@
+.image-container {
+  min-height: 200px;
+  background-size: cover;
+}
+#list {
+    width: 100%;
+    margin: 30px auto;
+    font-size: 20px;
+  }
+  #list ul {
+    margin-top: 30px;
+  }
+  #list ul li {
+    text-align: left;
+    list-style: disc;
+    margin: 10px 0px;
+  }
+  
+.new-background-color{
+    --background: #1e1f38;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+  }
+ .mt-3 h4{
+     color: #fff;
+     text-align: center;
+ }
+  .tlig
+  {
+    width: 100%;
+    height:100px;
+  }
+  .title-ios{
+    color: #fff;
+  }
+  ion-slide{
+      margin-bottom: 35px;
+    }
+    .toolimg{
+      height: 150px;
+      width: 100%;
+      padding: 15px;
+      display: flex;
+    }
+    ion-content {
+      --background: url(/assets/bg.png) no-repeat center/cover fixed;
+    }
+    ion-content h4{
+      color: #fff;
+      text-align: center;
+    }
+    .imagediv {
+      height: 200px;
+      justify-content: center;
+      display: flex;
+      vertical-align: middle;
+      align-items: center;
+      width: 100%;
+      font-size: 30px;
+      color: white;
+    }
+    
+    ion-card {
+      width: 100%;
+      margin: 0 10px;
+      padding: 5px 0px;
+    }
+    .btbar{
+      color: #000000;
+    }
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      width: max-content;
+  }
+  .row:first-child .summarycell{
+      font-weight: bold;
+      text-align: center;
+  }
+  .cell{
+      overflow: auto;
+      word-wrap: break-word;
+      width: 27vw;
+      border: 1px solid #b3b3b3;
+      padding: 10px;
+      text-align: right;
+  }
+  
+  .cell:first-child{
+      width:41vw;
+      text-align: left;
+  }
+  
+  .l-title{
+    background: #1e1f38;
+    display: flex;
+  
+    color: #fff;
+    padding: 10px;
+  
+  }
+  .bottom-bt{
+    background: #1e1f38;
+
+  
+  }
+  
+  .l-data-row{
+    
+    background-color: #bababa;
+    margin-top: 3px;
+  }
+  
+  .l-main-col{
+    overflow-y: scroll;
+    height: 198px;
+  }
+  .toolbar-class{
+  
+   text-align: center;
+    padding: 10px;
+  }
+  
+  .header .col {
+    background-color:lightgrey;
+  }
+  
+  .col {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+  }
+  
+  .col:last-child {
+    border-right: solid 1px grey;
+  }
+  
+  .row:last-child .col {
+    border-bottom: solid 1px grey;
+  }
+  
+  .bottom-bar{
+    --background: #1e1f38;  
+  
+  }
+  .btm-icon{
+    color: #fff;
+  }
+  .table-bordered th{
+      color: #fff;
+  }
+  .md-custom-data .mbsc-event-txt {
+    line-height: 1.3em;
+}
+
+.md-event-loc {
+    padding-top: .5em;
+    font-size: 12px;
+}
+
+.md-event-emoji {
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    font-size: 14px;
+}
+
+.md-event-desc+.md-event-loc+.md-event-emoji {
+    top: 30px;
+}
+
+.md-event-loc .mbsc-ic-location {
+    margin-right: 5px;
+}
+.psl-main-box button{
+
+  background: none;
+  text-align: center;
+
+}
+.psl-team p{
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background: rgba(255,255,255,0.20);
+    border-radius: 10px;
+
+}
+.bt-psl-1
+{
+  padding: 4px 17px;
+  
+
+}
+.team-wraper .row{
+  margin: auto;
+
+}
+.team-wraper .psl-team{
+  padding :9px 7px;
+}
+.psl-team{
+
+  background: rgba(255,255,255,0.20);
+  border-radius: 10px;
+  margin: 10px;
+  
+}
+.toprow{
+  margin-top: 10px;
+} 
+.team-wraper .row .psl-team ion-img{
+  width: 100px;
+}     
+
+@media (min-width: 0px) {
+  .images {
+      column-count: 2;
+  }
+}
+
+@media (min-width: 420px) {
+  .images {
+      column-count: 3;
+  }
+}
+
+@media (min-width: 720px) {
+  .images {
+      column-count: 4;
+  }
+}
+
+.one-image {
+  margin: 2px;
+}
